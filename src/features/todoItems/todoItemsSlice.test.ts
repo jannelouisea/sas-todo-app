@@ -43,17 +43,17 @@ describe('todoItemsSlice', () => {
 
         const newState: IToDoItem[] = [
             {
+                id,
+                text,
+                createdAt,
+                completed: false,
+            },
+            {
                 id: 'todo-item-001',
                 text: 'Walk the dog',
                 createdAt: createdAt01,
                 completed: true,
             },
-            {
-                id,
-                text,
-                createdAt,
-                completed: false,
-            }
         ];
 
         expect(reducer(previousState, todoItemAdded({ id, text, createdAt }))).toEqual(newState);

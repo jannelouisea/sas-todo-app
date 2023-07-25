@@ -2,7 +2,7 @@ import {
     Item
 } from 'src/components'
 import { useAppDispatch, useAppSelector } from 'src/app/hooks'
-import { todoItemAdded } from 'src/features/todoItems/todoItemsSlice'
+import { todoItemAdded, todoItemToggled } from 'src/features/todoItems/todoItemsSlice'
 import {
     IToDoItem
 } from 'src/interfaces/'
@@ -12,7 +12,7 @@ function ToDoList() {
     const todoItems = useAppSelector(state => state.todoItems);
     const dispatch = useAppDispatch();
 
-    const handleClick = () => {
+    const handleAddItem = () => {
         dispatch(todoItemAdded({
             id: `todo-item-${todoItems.length + 1}`,
             text: `Hello World Again`,
@@ -20,24 +20,26 @@ function ToDoList() {
         }))
     };
 
+    const handleToggleItem = (id: string) => {
+        dispatch(todoItemToggled(id));
+    }
+
     return (
         <div className="m-6">
             <div>
-                <button onClick={handleClick}>Add Item</button>
+                <button onClick={handleAddItem}>Add Item</button>
             </div>
             {
                 todoItems.map((item: IToDoItem) =>
                     <div key={item.id} className="mb-1">
+                        <div>{item.id}</div>
                         <div>{item.text}</div>
                         <div>{item.createdAt.toDateString()}</div>
                         <div>{`${item.completed}`}</div>
+                        <button onClick={() => handleToggleItem(item.id)}>Toggle Item</button>
                     </div>
                 )
             }
-            <Item />
-            <Item />
-            <Item />
-            <Item />
         </div>
     );
 }
