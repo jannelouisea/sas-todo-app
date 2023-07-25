@@ -2,6 +2,7 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import {
     IToDoItem
 } from 'src/interfaces'
+import moment from 'moment';
 
 export type ITodoItemAddedPayload = {
     id: string,
@@ -17,7 +18,7 @@ const todoItemsSlice = createSlice({
     reducers: {
         todoItemAdded(state, action: PayloadAction<ITodoItemAddedPayload>) {
             const { id, text, createdAt } = action.payload;
-            state.push({
+            state.unshift({
                 id,
                 text,
                 createdAt,
