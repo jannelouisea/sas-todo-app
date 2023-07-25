@@ -2,9 +2,9 @@ import {
     IToDoItem
 } from 'src/interfaces'
 import moment from 'moment';
-import reducer, { todoItemAdded, todoItemToggled } from './slice'
+import reducer, { todoItemAdded, todoItemToggled } from './todoItemsSlice'
 
-describe('todoSlice', () => {
+describe('todoItemsSlice', () => {
     it('should return the initial state', () => {
         expect(reducer(undefined, { type: undefined })).toEqual([]);
     });
