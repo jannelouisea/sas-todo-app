@@ -7,9 +7,6 @@ import moment from 'moment';
 import uniqid from 'uniqid';
 
 import Input from '@mui/joy/Input';
-import IconButton from '@mui/joy/IconButton';
-import Tooltip from '@mui/joy/Tooltip';
-import AddIcon from '@mui/icons-material/Add';
 import AddItemButton from './AddItemButton';
 
 function AddItemFieldBar() {
@@ -35,23 +32,14 @@ function AddItemFieldBar() {
     return (
         <div className='flex'>
             <Input
-                className='flex-1'
-                placeholder='Add to-do item...'
+                className='flex-1 drop-shadow-xl'
+                placeholder='Add a to-do item...'
+                size='lg'
                 value={text}
                 onChange={(e) => setText(e.target.value)}
+                sx={{ borderRadius: '4rem' }}
             />
             <div className='ml-2'>
-                {/*
-                <Tooltip title='Add item' variant='solid' placement='top'>
-                    <IconButton
-                        variant='solid'
-                        aria-label='Add to-do item button'
-                        onClick={onAddItem}
-                    >
-                        <AddIcon />
-                    </IconButton>
-                </Tooltip>
-                */}
                 <AddItemButton onClick={onAddItem} />
             </div>
         </div>
