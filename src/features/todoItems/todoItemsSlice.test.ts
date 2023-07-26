@@ -6,7 +6,32 @@ import reducer, { todoItemAdded, todoItemToggled } from './todoItemsSlice'
 
 describe('todoItemsSlice', () => {
     it('should return the initial state', () => {
-        expect(reducer(undefined, { type: undefined })).toEqual([]);
+        const initState = reducer(undefined, { type: undefined });
+
+        expect(initState[0].id).toEqual('init-item-001');
+        expect(initState[0].text).toEqual('Clean the house');
+        expect(initState[0].completed).toBeFalsy();
+
+        expect(initState[1]).toEqual({
+            id: 'init-item-002',
+            text: 'Pack things for upcoming trip',
+            createdAt: moment('2023-07-18').toDate(),
+            completed: false
+        });
+
+        expect(initState[2]).toEqual({
+            id: 'init-item-003',
+            text: 'Make dinner',
+            createdAt: moment('2023-07-25').toDate(),
+            completed: true
+        });
+
+        expect(initState[3]).toEqual({
+            id: 'init-item-004',
+            text: 'Prepare for SAS Interview',
+            createdAt: moment('2023-07-15').toDate(),
+            completed: true
+        });
     });
 
     it('should handle an item added to an new list', () => {
@@ -130,8 +155,4 @@ describe('todoItemsSlice', () => {
 
         expect(reducer(state, todoItemToggled(''))).toEqual(state);
     });
-});
-
-test('should return the initial state', () => {
-    expect(reducer(undefined, { type: undefined })).toEqual([]);
 });
