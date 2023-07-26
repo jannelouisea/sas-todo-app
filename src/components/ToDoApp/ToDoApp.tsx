@@ -9,7 +9,7 @@ import SearchIcon from '@mui/icons-material/Search';
 function ToDoApp() {
     return (
         <div className="w-screen h-screen flex justify-center items-center">
-            <div className="w-96 lg:w-5/12 h-5/6 backdrop-blur-xl bg-white/30 p-8 rounded-lg drop-shadow-2xl">
+            <div className="w-96 sm:w-9/12 md:w-9/12 lg:w-9/12 max-w-2xl h-5/6 backdrop-blur-xl bg-white/30 p-8 rounded-lg drop-shadow-2xl">
                 <div className='mb-4'>
                     <Input
                         className='flex-1 drop-shadow-xl'
