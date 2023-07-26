@@ -10,7 +10,32 @@ export type ITodoItemAddedPayload = {
     createdAt: Date,
 };
 
-const initialState: IToDoItem[] = [];
+const initialState: IToDoItem[] = [
+    {
+        id: 'init-item-001',
+        text: 'Clean the house',
+        createdAt: moment().toDate(),
+        completed: false
+    },
+    {
+        id: 'init-item-002',
+        text: 'Pack things for upcoming trip',
+        createdAt: moment('2023-07-18').toDate(),
+        completed: false
+    },
+    {
+        id: 'init-item-003',
+        text: 'Make dinner',
+        createdAt: moment('2023-07-25').toDate(),
+        completed: true
+    },
+    {
+        id: 'init-item-004',
+        text: 'Prepare for SAS Interview',
+        createdAt: moment('2023-07-15').toDate(),
+        completed: true
+    },
+];
 
 const todoItemsSlice = createSlice({
     name: 'todoItems',
