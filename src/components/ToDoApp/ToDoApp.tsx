@@ -6,9 +6,11 @@ import {
 function ToDoApp() {
     return (
         <div className="w-screen h-screen flex justify-center items-center">
-            <div className="w-96 lg:w-4/12 h-3/4 bg-slate-300 backdrop-blur-sm">
+            <div className="w-96 lg:w-5/12 h-5/6 backdrop-blur-xl bg-white/30 p-8 rounded-lg drop-shadow-2xl">
                 <AddItemFieldBar />
-                <ToDoList />
+                <div className='mt-4'>
+                    <ToDoList />
+                </div>
             </div>
         </div>
     );
