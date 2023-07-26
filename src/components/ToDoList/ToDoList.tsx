@@ -1,23 +1,18 @@
 import { useAppSelector } from 'src/app/hooks'
-import {
-    IToDoItem
-} from 'src/interfaces'
-import {
-    Item
-} from 'src/components'
+import { IToDoItem } from 'src/interfaces'
+import { Item } from 'src/components'
+import { isOlderItem } from 'src/utils';
 
 function ToDoList() {
     const todoItems = useAppSelector(state => state.todoItems);
     const todoItemsFilters = useAppSelector(state => state.todoItemsFilters);
 
     const itemMeetsCriteria = (item: IToDoItem) => {
-        let meetsCriteria: boolean = true;
-
-        if (todoItemsFilters.searchTerm) {
-            meetsCriteria = meetsCriteria && item.text.includes(todoItemsFilters.searchTerm);
-        }
-
-        return meetsCriteria;
+        const includesSearchTeam = todoItemsFilters.searchTerm === '' ? true : item.text.includes(todoItemsFilters.searchTerm);
+        const isOldItem = isOlderItem(item);
+        return ((todoItemsFilters.showNewer && !item.completed && !isOldItem) ||
+            (todoItemsFilters.showOlder && !item.completed && isOldItem) ||
+            (todoItemsFilters.showCompleted && item.completed)) && includesSearchTeam;
     }
 
     return (

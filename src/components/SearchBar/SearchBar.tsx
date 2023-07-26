@@ -3,8 +3,16 @@ import { searchTermChanged } from 'src/features/todoItemsFilters/todoItemsFilter
 
 import Input from '@mui/joy/Input';
 import SearchIcon from '@mui/icons-material/Search';
+import PropTypes from 'prop-types';
+import classname from 'classnames';
 
-function SearchBar() {
+type Props = {
+    className: string,
+}
+
+function SearchBar({ className }: Props) {
+    const inputClassName = classname('flex-1 drop-shadow-xl', className);
+
     const searchTerm = useAppSelector(state => state.todoItemsFilters.searchTerm);
     const dispatch = useAppDispatch();
 
@@ -15,7 +23,7 @@ function SearchBar() {
 
     return (
         <Input
-            className='flex-1 drop-shadow-xl'
+            className={inputClassName}
             placeholder='Search to-do items...'
             size='lg'
             value={searchTerm}
@@ -24,6 +32,14 @@ function SearchBar() {
             sx={{ borderRadius: '4rem' }}
         />
     );
+}
+
+SearchBar.propTypes = {
+    className: PropTypes.string,
+}
+
+SearchBar.defaultProps = {
+    className: '',
 }
 
 export default SearchBar;

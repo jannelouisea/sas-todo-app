@@ -15,8 +15,6 @@ function AddItemFieldBar() {
     const IS_TEXT_EMPTY_ERR_MSG = 'To-do item cannot be empty.'
     const dispatch = useAppDispatch();
 
-    // TODO - Additions
-    // Adding a number count?
     const [text, setText] = useState(INITIAL_TEXT_STATE);
     const [textChanged, setTextChanged] = useState(false);
     const [hasError, setHasError] = useState(false);
@@ -47,6 +45,10 @@ function AddItemFieldBar() {
         }
     };
 
+    const onInputBlur = () => {
+        setTextChanged(false);
+    }
+
     const resetState = () => {
         setTextChanged(false);
         setText(INITIAL_TEXT_STATE);
@@ -61,6 +63,7 @@ function AddItemFieldBar() {
                     size='lg'
                     value={text}
                     onChange={onTextChanged}
+                    onBlur={onInputBlur}
                     sx={{ borderRadius: '4rem' }}
                     error={hasError}
                 />
