@@ -29,7 +29,7 @@ function Item({ item }: Props) {
     }
 
     return (
-        <Card className='drop-shadow-lg' color={color} variant={cardVariant} size='sm' sx={{ borderRadius: '4rem' }}>
+        <Card className='drop-shadow-lg' color={color} variant={cardVariant} size='sm' sx={{ borderRadius: '2rem' }}>
             <div className="flex items-center">
                 <div className="ml-1 mr-4">
                     <IconButton
