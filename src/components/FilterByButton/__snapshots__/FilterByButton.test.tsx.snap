@@ -1,0 +1,70 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FilterByButton renders correctly when filter disabled 1`] = `
+<div
+  className="foo"
+>
+  <button
+    aria-label="Filter by button"
+    className="MuiButton-root MuiButton-variantSoft MuiButton-colorNeutral MuiButton-sizeSm foo css-d4z7sw-JoyButton-root"
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    onKeyDown={[Function]}
+    onKeyUp={[Function]}
+    onMouseDown={[Function]}
+    onMouseLeave={[Function]}
+  >
+    <span
+      className="MuiButton-startDecorator css-187ulk2-JoyButton-startDecorator"
+    />
+    foo
+  </button>
+</div>
+`;
+
+exports[`FilterByButton renders correctly when filter enabled 1`] = `
+<div
+  className="foo"
+>
+  <button
+    aria-label="Filter by button"
+    className="MuiButton-root MuiButton-variantSolid MuiButton-colorPrimary MuiButton-sizeSm foo css-1d374uw-JoyButton-root"
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    onKeyDown={[Function]}
+    onKeyUp={[Function]}
+    onMouseDown={[Function]}
+    onMouseLeave={[Function]}
+  >
+    <span
+      className="MuiButton-startDecorator css-187ulk2-JoyButton-startDecorator"
+    />
+    foo
+  </button>
+</div>
+`;
+
+exports[`FilterByButton renders correctly with default props 1`] = `
+<div
+  className=""
+>
+  <button
+    aria-label="Filter by button"
+    className="MuiButton-root MuiButton-variantSolid MuiButton-colorPrimary MuiButton-sizeSm css-1d374uw-JoyButton-root"
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    onKeyDown={[Function]}
+    onKeyUp={[Function]}
+    onMouseDown={[Function]}
+    onMouseLeave={[Function]}
+  >
+    <span
+      className="MuiButton-startDecorator css-187ulk2-JoyButton-startDecorator"
+    />
+    foo
+  </button>
+</div>
+`;

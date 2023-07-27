@@ -23,6 +23,7 @@ function AddItemButton({ onClick }: Props) {
 }
 
 AddItemButton.propTypes = {
+    // Function to call when button is clicked
     onClick: PropTypes.object
 }
 
