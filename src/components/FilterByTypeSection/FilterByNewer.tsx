@@ -3,6 +3,9 @@ import {
 } from 'src/components'
 import HourglassTopIcon from '@mui/icons-material/HourglassTop';
 import PropTypes from 'prop-types';
+import {
+    JoyUIColor
+} from 'src/static/enums'
 
 import { useAppDispatch, useAppSelector } from 'src/app/hooks';
 import { showNewerToggled } from 'src/features/todoItemsFilters/todoItemsFiltersSlice';
@@ -22,7 +25,7 @@ function FilterByNewer({ className }: Props) {
     return <FilterByButton
         className={className}
         label='Newer'
-        color='primary'
+        color={JoyUIColor.Primary}
         startIcon={<HourglassTopIcon fontSize='small' />}
         filterEnabled={showNewer}
         onClick={onToggleFilter}

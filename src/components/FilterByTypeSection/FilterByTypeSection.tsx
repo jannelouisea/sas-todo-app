@@ -7,9 +7,9 @@ import {
 function FilterByTypeSection() {
     return (
         <div className='flex'>
-            <div className='mr-2'><FilterByNewer /></div>
-            <div className='mr-2'><FilterByOlder /></div>
-            <FilterByCompleted />
+            <FilterByNewer className='mr-2' />
+            <FilterByOlder className='mr-2' />
+            <FilterByCompleted className='mr-2' />
         </div>
     );
 }

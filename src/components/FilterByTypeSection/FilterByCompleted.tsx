@@ -3,6 +3,9 @@ import {
 } from 'src/components'
 import DoneIcon from '@mui/icons-material/Done';
 import PropTypes from 'prop-types';
+import {
+    JoyUIColor
+} from 'src/static/enums'
 
 import { useAppDispatch, useAppSelector } from 'src/app/hooks';
 import { showCompletedToggled } from 'src/features/todoItemsFilters/todoItemsFiltersSlice';
@@ -22,7 +25,7 @@ function FilterByCompleted({ className }: Props) {
     return <FilterByButton
         className={className}
         label='Completed'
-        color='success'
+        color={JoyUIColor.Success}
         startIcon={<DoneIcon fontSize='small' />}
         filterEnabled={showCompleted}
         onClick={onToggleFilter}

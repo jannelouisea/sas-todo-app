@@ -1,7 +1,10 @@
 import {
     FilterByButton
 } from 'src/components'
-import HourglassBottomIcon from '@mui/icons-material/HourglassTop';
+import HourglassBottomIcon from '@mui/icons-material/HourglassBottom';
+import {
+    JoyUIColor
+} from 'src/static/enums'
 
 import { useAppDispatch, useAppSelector } from 'src/app/hooks';
 import { showOlderToggled } from 'src/features/todoItemsFilters/todoItemsFiltersSlice';
@@ -22,7 +25,7 @@ function FilterByOlder({ className }: Props) {
     return <FilterByButton
         className={className}
         label='Older'
-        color='warning'
+        color={JoyUIColor.Warning}
         startIcon={<HourglassBottomIcon fontSize='small' />}
         filterEnabled={showOlder}
         onClick={onToggleFilter}
