@@ -16,7 +16,6 @@ function SearchBar({ className }: Props) {
     const searchTerm = useAppSelector(state => state.todoItemsFilters.searchTerm);
     const dispatch = useAppDispatch();
 
-    // TODO - Add a debounce function here
     const onSearchTermChanged = (evt: React.ChangeEvent<HTMLInputElement>) => {
         dispatch(searchTermChanged(evt.target.value));
     }
@@ -30,11 +29,13 @@ function SearchBar({ className }: Props) {
             onChange={onSearchTermChanged}
             startDecorator={<SearchIcon sx={{ color: 'text.tertiary' }} />}
             sx={{ borderRadius: '4rem' }}
+            aria-label='Search to-do items'
         />
     );
 }
 
 SearchBar.propTypes = {
+    // Styles to apply to the root of the component
     className: PropTypes.string,
 }
 
