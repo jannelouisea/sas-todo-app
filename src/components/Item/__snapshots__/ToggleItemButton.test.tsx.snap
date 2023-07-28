@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ToggleItemButton renders correctly 1`] = `
+<button
+  aria-label="Complete item button"
+  className="MuiIconButton-root MuiIconButton-variantOutlined MuiIconButton-colorPrimary MuiIconButton-sizeSm css-1du9397-JoyIconButton-root"
+  id="complete-item-button"
+  onBlur={[Function]}
+  onClick={[Function]}
+  onFocus={[Function]}
+  onKeyDown={[Function]}
+  onKeyUp={[Function]}
+  onMouseDown={[Function]}
+  onMouseLeave={[Function]}
+>
+  <svg
+    aria-hidden={true}
+    className="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+    data-testid="DoneIcon"
+    focusable="false"
+    viewBox="0 0 24 24"
+  >
+    <path
+      d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"
+    />
+  </svg>
+</button>
+`;
