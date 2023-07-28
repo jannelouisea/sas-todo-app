@@ -2,7 +2,7 @@
 
 exports[`SearchBar renders correctly 1`] = `
 <div
-  className="MuiInput-root MuiInput-variantOutlined MuiInput-colorNeutral MuiInput-sizeLg flex-1 drop-shadow-xl css-1n5ydwi-JoyInput-root"
+  className="MuiInput-root MuiInput-variantOutlined MuiInput-colorNeutral MuiInput-sizeLg drop-shadow css-1n5ydwi-JoyInput-root"
   onClick={[Function]}
 >
   <div

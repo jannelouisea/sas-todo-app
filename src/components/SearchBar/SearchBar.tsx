@@ -13,14 +13,16 @@ type Props = {
 }
 
 function SearchBar({ className }: Props) {
-    const inputClassName = classname('flex-1 drop-shadow-xl', className);
-
     const searchTerm = useAppSelector(state => state.todoItemsFilters.searchTerm);
     const dispatch = useAppDispatch();
 
     const onSearchTermChanged = (evt: React.ChangeEvent<HTMLInputElement>) => {
         dispatch(searchTermChanged(evt.target.value));
-    }
+    };
+
+    const inputClassName = classname('drop-shadow', className);
+    const muiInputStyles = { borderRadius: '4rem' };
+    const muiIconStyles = { color: 'text.tertiary' };
 
     return (
         <Input
@@ -29,8 +31,8 @@ function SearchBar({ className }: Props) {
             size={MUISize.Large}
             value={searchTerm}
             onChange={onSearchTermChanged}
-            startDecorator={<SearchIcon sx={{ color: 'text.tertiary' }} />}
-            sx={{ borderRadius: '4rem' }}
+            startDecorator={<SearchIcon sx={muiIconStyles} />}
+            sx={muiInputStyles}
             aria-label='Search to-do items'
         />
     );

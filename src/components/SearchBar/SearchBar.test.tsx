@@ -6,7 +6,6 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import SearchBar from './SearchBar';
 import { store } from 'src/app/store';
 
-
 const middlewares = [thunkMiddleware];
 const mockStore = configureMockStore(middlewares);
 
