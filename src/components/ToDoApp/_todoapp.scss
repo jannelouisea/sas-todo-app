@@ -1,0 +1,15 @@
+.to-do-app {
+    &_section {
+        margin-bottom: 1rem;
+    }
+
+    &_filter-and-sort {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &_filter-section {
+        flex: 1 1 0%;
+        margin-bottom: .25rem;
+    }
+}
