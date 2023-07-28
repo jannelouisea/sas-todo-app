@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import { useAppDispatch } from 'src/app/hooks';
-import { todoItemAdded } from 'src/features/todoItems/todoItemsSlice';
+import { useAppDispatch, useAppSelector } from 'src/app/hooks';
+import { todoItemAdded, todoItemsSorted } from 'src/features/todoItems/todoItemsSlice';
 
 import moment from 'moment';
 import uniqid from 'uniqid';
@@ -12,8 +12,10 @@ import AddItemButton from './AddItemButton';
 function AddItemFieldBar() {
 
     const INITIAL_TEXT_STATE = '';
-    const IS_TEXT_EMPTY_ERR_MSG = 'To-do item cannot be empty.'
+    const IS_TEXT_EMPTY_ERR_MSG = 'To-do item cannot be empty.';
+
     const dispatch = useAppDispatch();
+    const sortBy = useAppSelector(state => state.todoItemsFilters.sortBy);
 
     const [text, setText] = useState(INITIAL_TEXT_STATE);
     const [textChanged, setTextChanged] = useState(false);
@@ -30,15 +32,13 @@ function AddItemFieldBar() {
     }
 
     const onAddItem = () => {
-        const isEmpty = text === '';
-
-        if (!isEmpty) {
+        if (text !== '') {
             dispatch(todoItemAdded({
                 id: uniqid(),
                 text,
                 createdAt: moment().toDate(),
             }));
-
+            dispatch(todoItemsSorted(sortBy));
             resetState();
         } else {
             setHasError(true);
