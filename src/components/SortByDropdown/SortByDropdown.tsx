@@ -1,14 +1,19 @@
 import Select from '@mui/joy/Select';
 import Option from '@mui/joy/Option';
+import PropTypes from 'prop-types';
 
 import { ISortByItem } from 'src/interfaces';
 import { Sort } from 'src/static/enums';
-
+import { Label } from 'src/components';
 import { useAppDispatch } from 'src/app/hooks';
 import { todoItemsSorted } from 'src/features/todoItems/todoItemsSlice';
 import { sortByChanged } from 'src/features/todoItemsFilters/todoItemsFiltersSlice';
 
-function SortByDropdown() {
+type Props = {
+    className: string
+}
+
+function SortByDropdown({ className }: Props) {
     const sortByOptions: ISortByItem[] = [
         {
             value: Sort.Incmpl1st,
@@ -44,27 +49,38 @@ function SortByDropdown() {
     }
 
     return (
-        <Select
-            defaultValue={Sort.Incmpl1st}
-            onChange={onSelectChange}
-            slotProps={{
-                root: {
-                    sx: {
-                        minHeight: '2rem',
-                        maxHeight: '2rem'
-                    }
-                },
-            }}
-        >
-            {
-                sortByOptions.map((option: ISortByItem, index: number) =>
-                    <Option key={`sort-by-${index}`} value={option.value}>
-                        {option.label}
-                    </Option>
-                )
-            }
-        </Select>
+        <div className='sort-by-dropdown'>
+            <Label text='Sort by' />
+            <Select
+                defaultValue={Sort.Incmpl1st}
+                onChange={onSelectChange}
+                slotProps={{
+                    root: {
+                        sx: {
+                            minHeight: '2rem',
+                            maxHeight: '2rem'
+                        }
+                    },
+                }}
+            >
+                {
+                    sortByOptions.map((option: ISortByItem, index: number) =>
+                        <Option key={`sort-by-${index}`} value={option.value}>
+                            {option.label}
+                        </Option>
+                    )
+                }
+            </Select>
+        </div>
     );
+}
+
+SortByDropdown.propTypes = {
+    className: PropTypes.string,
+}
+
+SortByDropdown.defaultProps = {
+    className: ''
 }
 
 export default SortByDropdown;
