@@ -1,2 +1,4 @@
-//@import '~src/components/SearchBar/searchbar';
+@use '~src/components/ToDoApp/todoapp';
 @use '~src/components/AddItemFieldBar/additemfieldbar';
+@use '~src/components/FilterByTypeSection/filterbytypesection';
+@use '~src/components/SortByDropdown/sortbydropdown';

@@ -35,3 +35,7 @@ export enum MUIPos {
 export enum MUIText {
     Label = 'body3'
 }
+
+export enum MUIFontSize {
+    Small = 'small'
+}
