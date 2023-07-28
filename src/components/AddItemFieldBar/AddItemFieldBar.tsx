@@ -4,6 +4,8 @@ import { todoItemAdded, todoItemsSorted } from 'src/features/todoItems/todoItems
 
 import moment from 'moment';
 import uniqid from 'uniqid';
+import PropTypes from 'prop-types';
+import classNames from 'classnames';
 
 import Input from '@mui/joy/Input';
 import Typography from '@mui/joy/Typography';
@@ -16,7 +18,11 @@ import {
     MUIColor,
 } from 'src/static/enums';
 
-function AddItemFieldBar() {
+type Props = {
+    className: string,
+}
+
+function AddItemFieldBar({ className }: Props) {
     const INITIAL_TEXT_STATE = '';
     const IS_TEXT_EMPTY_ERR_MSG = 'To-do item cannot be blank.';
     const PLACEHOLDER = 'What do I need to-do?';
@@ -61,11 +67,12 @@ function AddItemFieldBar() {
         setText(INITIAL_TEXT_STATE);
     };
 
+    const rootStyles = classNames('add-item-field-bar', className);
     const muiInputStyles = { borderRadius: '4rem' };
     const muiErrStyles = { marginTop: '.25rem', paddingLeft: '1.5rem' };
 
     return (
-        <div className='add-item-field-bar'>
+        <div className={rootStyles}>
             <div className='add-item-input'>
                 <Input
                     className='drop-shadow'
@@ -95,6 +102,14 @@ function AddItemFieldBar() {
             </div>
         </div>
     );
+}
+
+AddItemFieldBar.propTypes = {
+    className: PropTypes.string,
+}
+
+AddItemFieldBar.defaultProps = {
+    className: ''
 }
 
 export default AddItemFieldBar;

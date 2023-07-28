@@ -34,7 +34,7 @@ function AddItemButton({ onClick }: Props) {
 }
 
 AddItemButton.propTypes = {
-    onClick: PropTypes.object
+    onClick: PropTypes.func
 }
 
 export default AddItemButton;

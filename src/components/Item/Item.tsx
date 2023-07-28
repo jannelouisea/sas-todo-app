@@ -36,7 +36,7 @@ function Item({ item }: Props) {
     const cardVariant: MUIVariant = item.completed ? MUIVariant.Soft : MUIVariant.Outlined;
     const buttonVariant: MUIVariant = item.completed ? MUIVariant.Solid : MUIVariant.Outlined;
 
-    const isOlderIconClassNames = classNames('mr-1', { 'hidden': item.completed || (!isOlderItem) });
+    const isOlderIconClassNames = classNames({ 'hidden': item.completed || (!isOlderItem) });
 
     const onToggleItem = (id: string) => {
         dispatch(todoItemToggled(id));
@@ -65,18 +65,16 @@ function Item({ item }: Props) {
                 <div className="flex-1">
                     <span>{item.text}</span>
                     <div className='flex items-center'>
+                        <Typography
+                            textColor={item.completed ? 'neutral.700' : 'neutral.500'}
+                            level='body3'
+                            variant={MUIVariant.Plain}
+                            sx={{ padding: 0, paddingTop: '.25rem', marginLeft: '.25rem', marginRight: '.25rem', }}
+                        >
+                            {`Created ${moment(item.createdAt).format('lll')}`}
+                        </Typography>
                         <div className={isOlderIconClassNames}>
                             <HourglassBottomIcon sx={{ fontSize: '1rem' }} />
-                        </div>
-                        <div className='ml-1'>
-                            <Typography
-                                textColor={item.completed ? 'neutral.700' : 'neutral.500'}
-                                level='body3'
-                                variant={MUIVariant.Plain}
-                                sx={{ padding: 0, paddingTop: '.25rem' }}
-                            >
-                                {`Created ${moment(item.createdAt).format('lll')}`}
-                            </Typography>
                         </div>
                     </div>
                 </div>

@@ -13,9 +13,10 @@ type Props = {
     startIcon: React.ReactNode,
     onClick: React.MouseEventHandler<HTMLButtonElement>,
     className: string,
+    ariaLabel: string,
 }
 
-function FilterByButton({ label, color, filterEnabled, startIcon, onClick, className }: Props) {
+function FilterByButton({ label, color, filterEnabled, startIcon, onClick, className, ariaLabel }: Props) {
     return (
         <div className={className}>
             <Button
@@ -26,7 +27,7 @@ function FilterByButton({ label, color, filterEnabled, startIcon, onClick, class
                 variant={filterEnabled ? MUIVariant.Solid : MUIVariant.Soft}
                 color={filterEnabled ? color : MUIColor.Neutral}
                 onClick={onClick}
-                aria-label='Filter by button'
+                aria-label={ariaLabel}
             >
                 {label}
             </Button>
@@ -39,14 +40,16 @@ FilterByButton.propTypes = {
     color: PropTypes.oneOf([...Object.values(MUIColor)]),
     filterEnabled: PropTypes.bool,
     startIcon: PropTypes.object,
-    onClick: PropTypes.object,
+    onClick: PropTypes.func,
     className: PropTypes.string,
+    ariaLabel: PropTypes.string,
 }
 
 FilterByButton.defaultProps = {
     filterEnabled: true,
     className: '',
     startIcon: <></>,
+    ariaLabel: 'Filter by button',
 }
 
 export default FilterByButton;
