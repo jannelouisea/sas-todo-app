@@ -7,7 +7,7 @@ import uniqid from 'uniqid';
 
 import Input from '@mui/joy/Input';
 import Typography from '@mui/joy/Typography';
-import AddItemButton from './AddItemButton';
+import { AddItemButton } from 'src/components';
 
 import {
     MUISize,

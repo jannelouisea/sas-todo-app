@@ -3,6 +3,7 @@ import Item from 'src/components/Item/Item';
 import RemoveItemButtton from 'src/components/Item/RemoveItemButtton';
 import ToggleItemButton from 'src/components/Item/ToggleItemButton';
 import ToDoList from 'src/components/ToDoList/ToDoList';
+import AddItemButton from 'src/components/AddItemButton/AddItemButton';
 import AddItemFieldBar from 'src/components/AddItemFieldBar/AddItemFieldBar';
 import SearchBar from 'src/components/SearchBar/SearchBar';
 import FilterByButton from 'src/components/FilterByButton/FilterByButton';
@@ -18,6 +19,7 @@ export {
     RemoveItemButtton,
     ToggleItemButton,
     ToDoList,
+    AddItemButton,
     AddItemFieldBar,
     SearchBar,
     FilterByButton,
