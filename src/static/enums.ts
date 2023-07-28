@@ -7,18 +7,21 @@ export enum Sort {
     TextDesc = 'TEXT_DESC',
 }
 
-export enum JoyUIColor {
+export enum MUIColor {
     Primary = 'primary',
     Success = 'success',
     Warning = 'warning',
     Neutral = 'neutral',
 }
 
-export enum JoyUIVariant {
+export enum MUIVariant {
     Solid = 'solid',
     Soft = 'soft',
+    Outlined = 'outlined',
+    Plain = 'plain',
 }
 
-export enum JoyUISize {
-    Small = 'sm'
+export enum MUISize {
+    Small = 'sm',
+    Large = 'lg',
 }

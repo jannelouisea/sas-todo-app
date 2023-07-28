@@ -1,14 +1,14 @@
 import Button from '@mui/joy/Button';
 import PropTypes from 'prop-types';
 import {
-    JoyUIColor,
-    JoyUIVariant,
-    JoyUISize
+    MUIColor,
+    MUIVariant,
+    MUISize
 } from 'src/static/enums'
 
 type Props = {
     label: string,
-    color: JoyUIColor,
+    color: MUIColor,
     filterEnabled: boolean,
     startIcon: React.ReactNode,
     onClick: React.MouseEventHandler<HTMLButtonElement>,
@@ -21,10 +21,10 @@ function FilterByButton({ label, color, filterEnabled, startIcon, onClick, class
             <Button
                 className={className}
                 startDecorator={startIcon}
-                size={JoyUISize.Small}
+                size={MUISize.Small}
                 sx={{ borderRadius: '4rem' }}
-                variant={filterEnabled ? JoyUIVariant.Solid : JoyUIVariant.Soft}
-                color={filterEnabled ? color : JoyUIColor.Neutral}
+                variant={filterEnabled ? MUIVariant.Solid : MUIVariant.Soft}
+                color={filterEnabled ? color : MUIColor.Neutral}
                 onClick={onClick}
                 aria-label='Filter by button'
             >
@@ -36,7 +36,7 @@ function FilterByButton({ label, color, filterEnabled, startIcon, onClick, class
 
 FilterByButton.propTypes = {
     label: PropTypes.string,
-    color: PropTypes.oneOf([JoyUIColor.Primary, JoyUIColor.Success, JoyUIColor.Warning]),
+    color: PropTypes.oneOf([...Object.values(MUIColor)]),
     filterEnabled: PropTypes.bool,
     startIcon: PropTypes.object,
     onClick: PropTypes.object,

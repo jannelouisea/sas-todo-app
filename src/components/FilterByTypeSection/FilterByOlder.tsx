@@ -3,7 +3,7 @@ import {
 } from 'src/components'
 import HourglassBottomIcon from '@mui/icons-material/HourglassBottom';
 import {
-    JoyUIColor
+    MUIColor
 } from 'src/static/enums'
 
 import { useAppDispatch, useAppSelector } from 'src/app/hooks';
@@ -25,7 +25,7 @@ function FilterByOlder({ className }: Props) {
     return <FilterByButton
         className={className}
         label='Older'
-        color={JoyUIColor.Warning}
+        color={MUIColor.Warning}
         startIcon={<HourglassBottomIcon fontSize='small' />}
         filterEnabled={showOlder}
         onClick={onToggleFilter}

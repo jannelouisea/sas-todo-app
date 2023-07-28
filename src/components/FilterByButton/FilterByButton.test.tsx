@@ -1,7 +1,7 @@
 import renderer from 'react-test-renderer';
 import { render, screen, fireEvent } from '@testing-library/react';
 import FilterByButton from './FilterByButton';
-import { JoyUIColor } from 'src/static/enums';
+import { MUIColor } from 'src/static/enums';
 
 describe('FilterByButton', () => {
     const labelTextId = 'Filter by button';
@@ -10,7 +10,7 @@ describe('FilterByButton', () => {
         const tree = renderer.create(
             <FilterByButton
                 label='foo'
-                color={JoyUIColor.Primary}
+                color={MUIColor.Primary}
                 onClick={() => { }}
             />
         ).toJSON();
@@ -22,7 +22,7 @@ describe('FilterByButton', () => {
         const tree = renderer.create(
             <FilterByButton
                 label='foo'
-                color={JoyUIColor.Primary}
+                color={MUIColor.Primary}
                 onClick={() => { }}
                 filterEnabled={true}
                 className='foo'
@@ -36,7 +36,7 @@ describe('FilterByButton', () => {
         const tree = renderer.create(
             <FilterByButton
                 label='foo'
-                color={JoyUIColor.Primary}
+                color={MUIColor.Primary}
                 onClick={() => { }}
                 filterEnabled={false}
                 className='foo'
@@ -52,7 +52,7 @@ describe('FilterByButton', () => {
         render(
             <FilterByButton
                 label='foo'
-                color={JoyUIColor.Primary}
+                color={MUIColor.Primary}
                 onClick={onClickSpy}
             />
         );
