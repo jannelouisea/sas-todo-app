@@ -1,5 +1,7 @@
 import ToDoApp from 'src/components/ToDoApp/ToDoApp';
 import Item from 'src/components/Item/Item';
+import RemoveItemButtton from 'src/components/Item/RemoveItemButtton';
+import ToggleItemButton from 'src/components/Item/ToggleItemButton';
 import ToDoList from 'src/components/ToDoList/ToDoList';
 import AddItemFieldBar from 'src/components/AddItemFieldBar/AddItemFieldBar';
 import SearchBar from 'src/components/SearchBar/SearchBar';
@@ -8,10 +10,13 @@ import FilterByCompleted from 'src/components/FilterByTypeSection/FilterByComple
 import FilterByNewer from 'src/components/FilterByTypeSection/FilterByNewer';
 import FilterByOlder from 'src/components/FilterByTypeSection/FilterByOlder';
 import FilterByTypeSection from 'src/components/FilterByTypeSection/FilterByTypeSection';
+import SortByDropdown from 'src/components/SortByDropdown/SortByDropdown';
 
 export {
     ToDoApp,
     Item,
+    RemoveItemButtton,
+    ToggleItemButton,
     ToDoList,
     AddItemFieldBar,
     SearchBar,
@@ -20,4 +25,5 @@ export {
     FilterByOlder,
     FilterByCompleted,
     FilterByTypeSection,
+    SortByDropdown
 }
