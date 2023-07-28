@@ -9,10 +9,17 @@ import Input from '@mui/joy/Input';
 import Typography from '@mui/joy/Typography';
 import AddItemButton from './AddItemButton';
 
-function AddItemFieldBar() {
+import {
+    MUISize,
+    MUIVariant,
+    MUIText,
+    MUIColor,
+} from 'src/static/enums';
 
+function AddItemFieldBar() {
     const INITIAL_TEXT_STATE = '';
-    const IS_TEXT_EMPTY_ERR_MSG = 'To-do item cannot be empty.';
+    const IS_TEXT_EMPTY_ERR_MSG = 'To-do item cannot be blank.';
+    const PLACEHOLDER = 'What do I need to-do?';
 
     const dispatch = useAppDispatch();
     const sortBy = useAppSelector(state => state.todoItemsFilters.sortBy);
@@ -54,22 +61,36 @@ function AddItemFieldBar() {
         setText(INITIAL_TEXT_STATE);
     };
 
+    const muiInputStyles = { borderRadius: '4rem' };
+    const muiErrStyles = { marginTop: '.25rem', paddingLeft: '1.5rem' };
+
     return (
-        <div className='flex'>
-            <div className='flex-1'>
+        <div className='add-item-field-bar'>
+            <div className='add-item-input'>
                 <Input
-                    className='drop-shadow-xl'
-                    placeholder='Add a to-do item...'
-                    size='lg'
+                    className='drop-shadow'
+                    placeholder={PLACEHOLDER}
+                    size={MUISize.Large}
                     value={text}
                     onChange={onTextChanged}
                     onBlur={onInputBlur}
-                    sx={{ borderRadius: '4rem' }}
+                    sx={muiInputStyles}
                     error={hasError}
+                    aria-label='Add to-do item input field'
                 />
-                {hasError && <Typography color='danger' level='body3' variant='plain' sx={{ marginTop: '.25rem', paddingLeft: '1.5rem' }}>{IS_TEXT_EMPTY_ERR_MSG}</Typography>}
+                {
+                    hasError &&
+                    <Typography
+                        color={MUIColor.Danger}
+                        level={MUIText.Label}
+                        variant={MUIVariant.Plain}
+                        sx={muiErrStyles}
+                    >
+                        {IS_TEXT_EMPTY_ERR_MSG}
+                    </Typography>
+                }
             </div>
-            <div className='ml-2'>
+            <div className='add-item-button'>
                 <AddItemButton onClick={onAddItem} />
             </div>
         </div>

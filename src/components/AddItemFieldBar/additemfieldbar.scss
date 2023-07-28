@@ -1,0 +1,11 @@
+.add-item-field-bar {
+    display: flex;
+
+    .add-item-input {
+        flex: 1 1 0%;
+    }
+
+    .add-item-button {
+        margin-left: .5rem;
+    }
+}

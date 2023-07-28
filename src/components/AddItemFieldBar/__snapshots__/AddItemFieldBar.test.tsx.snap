@@ -1,0 +1,60 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AddItemFieldBar renders correctly 1`] = `
+<div
+  className="add-item-field-bar"
+>
+  <div
+    className="add-item-input"
+  >
+    <div
+      className="MuiInput-root MuiInput-variantOutlined MuiInput-colorNeutral MuiInput-sizeLg drop-shadow css-1n5ydwi-JoyInput-root"
+      onClick={[Function]}
+    >
+      <input
+        aria-label="Add to-do item input field"
+        className="MuiInput-input css-1gw9vc6-JoyInput-input"
+        disabled={false}
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        placeholder="What do I need to-do?"
+        required={false}
+        value=""
+      />
+    </div>
+  </div>
+  <div
+    className="add-item-button"
+  >
+    <button
+      aria-label="Add to-do item button"
+      aria-labelledby={null}
+      className="MuiIconButton-root MuiIconButton-variantSolid MuiIconButton-colorPrimary MuiIconButton-sizeLg drop-shadow css-1tp8nsa-JoyIconButton-root"
+      id="add-item-button"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseLeave={[Function]}
+      onMouseOver={[Function]}
+      onTouchEnd={[Function]}
+      onTouchStart={[Function]}
+    >
+      <svg
+        aria-hidden={true}
+        className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+        data-testid="AddIcon"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"
+        />
+      </svg>
+    </button>
+  </div>
+</div>
+`;

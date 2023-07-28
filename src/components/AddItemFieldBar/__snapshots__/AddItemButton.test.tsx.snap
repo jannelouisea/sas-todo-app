@@ -3,7 +3,8 @@
 exports[`AddItemButton renders correctly 1`] = `
 <button
   aria-label="Add to-do item button"
-  className="MuiIconButton-root MuiIconButton-variantSolid MuiIconButton-colorPrimary MuiIconButton-sizeLg drop-shadow-xl css-1tp8nsa-JoyIconButton-root"
+  aria-labelledby={null}
+  className="MuiIconButton-root MuiIconButton-variantSolid MuiIconButton-colorPrimary MuiIconButton-sizeLg drop-shadow css-1tp8nsa-JoyIconButton-root"
   id="add-item-button"
   onBlur={[Function]}
   onClick={[Function]}
@@ -12,6 +13,9 @@ exports[`AddItemButton renders correctly 1`] = `
   onKeyUp={[Function]}
   onMouseDown={[Function]}
   onMouseLeave={[Function]}
+  onMouseOver={[Function]}
+  onTouchEnd={[Function]}
+  onTouchStart={[Function]}
 >
   <svg
     aria-hidden={true}
