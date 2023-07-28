@@ -4,7 +4,8 @@ import {
 import HourglassTopIcon from '@mui/icons-material/HourglassTop';
 import PropTypes from 'prop-types';
 import {
-    MUIColor
+    MUIColor,
+    MUIFontSize
 } from 'src/static/enums'
 
 import { useAppDispatch, useAppSelector } from 'src/app/hooks';
@@ -26,9 +27,10 @@ function FilterByNewer({ className }: Props) {
         className={className}
         label='Newer'
         color={MUIColor.Primary}
-        startIcon={<HourglassTopIcon fontSize='small' />}
+        startIcon={<HourglassTopIcon fontSize={MUIFontSize.Small} />}
         filterEnabled={showNewer}
         onClick={onToggleFilter}
+        ariaLabel='Filter by newer'
     />;
 }
 

@@ -7,11 +7,12 @@ import AddItemButton from 'src/components/AddItemButton/AddItemButton';
 import AddItemFieldBar from 'src/components/AddItemFieldBar/AddItemFieldBar';
 import SearchBar from 'src/components/SearchBar/SearchBar';
 import FilterByButton from 'src/components/FilterByButton/FilterByButton';
-import FilterByCompleted from 'src/components/FilterByTypeSection/FilterByCompleted';
-import FilterByNewer from 'src/components/FilterByTypeSection/FilterByNewer';
-import FilterByOlder from 'src/components/FilterByTypeSection/FilterByOlder';
+import FilterByCompleted from 'src/components/FilterByCompleted/FilterByCompleted';
+import FilterByNewer from 'src/components/FilterByNewer/FilterByNewer';
+import FilterByOlder from 'src/components/FilterByOlder/FilterByOlder';
 import FilterByTypeSection from 'src/components/FilterByTypeSection/FilterByTypeSection';
 import SortByDropdown from 'src/components/SortByDropdown/SortByDropdown';
+import Label from 'src/components/Label/Label';
 
 export {
     ToDoApp,
@@ -27,5 +28,6 @@ export {
     FilterByOlder,
     FilterByCompleted,
     FilterByTypeSection,
-    SortByDropdown
+    SortByDropdown,
+    Label
 }

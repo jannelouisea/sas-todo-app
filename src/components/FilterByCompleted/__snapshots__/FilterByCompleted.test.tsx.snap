@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FilterByCompleted renders correctly 1`] = `
+<div
+  className="foo"
+>
+  <button
+    aria-label="Filter by completed"
+    className="MuiButton-root MuiButton-variantSolid MuiButton-colorSuccess MuiButton-sizeSm foo css-1yqcigs-JoyButton-root"
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    onKeyDown={[Function]}
+    onKeyUp={[Function]}
+    onMouseDown={[Function]}
+    onMouseLeave={[Function]}
+  >
+    <span
+      className="MuiButton-startDecorator css-187ulk2-JoyButton-startDecorator"
+    >
+      <svg
+        aria-hidden={true}
+        className="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-ptiqhd-MuiSvgIcon-root"
+        data-testid="DoneIcon"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"
+        />
+      </svg>
+    </span>
+    Completed
+  </button>
+</div>
+`;

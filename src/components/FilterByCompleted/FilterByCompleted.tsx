@@ -4,7 +4,8 @@ import {
 import DoneIcon from '@mui/icons-material/Done';
 import PropTypes from 'prop-types';
 import {
-    MUIColor
+    MUIColor,
+    MUIFontSize
 } from 'src/static/enums'
 
 import { useAppDispatch, useAppSelector } from 'src/app/hooks';
@@ -26,9 +27,10 @@ function FilterByCompleted({ className }: Props) {
         className={className}
         label='Completed'
         color={MUIColor.Success}
-        startIcon={<DoneIcon fontSize='small' />}
+        startIcon={<DoneIcon fontSize={MUIFontSize.Small} />}
         filterEnabled={showCompleted}
         onClick={onToggleFilter}
+        ariaLabel='Filter by completed'
     />;
 }
 

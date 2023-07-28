@@ -3,7 +3,8 @@ import {
 } from 'src/components'
 import HourglassBottomIcon from '@mui/icons-material/HourglassBottom';
 import {
-    MUIColor
+    MUIColor,
+    MUIFontSize
 } from 'src/static/enums'
 
 import { useAppDispatch, useAppSelector } from 'src/app/hooks';
@@ -26,9 +27,10 @@ function FilterByOlder({ className }: Props) {
         className={className}
         label='Older'
         color={MUIColor.Warning}
-        startIcon={<HourglassBottomIcon fontSize='small' />}
+        startIcon={<HourglassBottomIcon fontSize={MUIFontSize.Small} />}
         filterEnabled={showOlder}
         onClick={onToggleFilter}
+        ariaLabel='Filter by older'
     />;
 }
 
