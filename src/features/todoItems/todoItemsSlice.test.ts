@@ -2,7 +2,7 @@ import {
     IToDoItem
 } from 'src/interfaces'
 import moment from 'moment';
-import reducer, { todoItemAdded, todoItemToggled } from './todoItemsSlice'
+import reducer, { todoItemAdded, todoItemToggled, todoItemRemoved } from './todoItemsSlice'
 
 describe('todoItemsSlice', () => {
     it('should return the initial state', () => {
@@ -130,7 +130,7 @@ describe('todoItemsSlice', () => {
         expect(reducer(previousState, todoItemToggled(id))).toEqual(newState);
     });
 
-    it('should handle unchanged todo list when id doesn\'t exist', () => {
+    it('should handle unchanged todo list when id doesn\'t exist for toggle', () => {
         const state: IToDoItem[] = [
             {
                 id: 'todo-item-001',
@@ -143,7 +143,7 @@ describe('todoItemsSlice', () => {
         expect(reducer(state, todoItemToggled('does-not-exist'))).toEqual(state);
     });
 
-    it('should handle unchanged todo list when id is an empty string', () => {
+    it('should handle unchanged todo list when id is an empty string for toggle', () => {
         const state: IToDoItem[] = [
             {
                 id: 'todo-item-001',
@@ -154,5 +154,69 @@ describe('todoItemsSlice', () => {
         ];
 
         expect(reducer(state, todoItemToggled(''))).toEqual(state);
+    });
+
+    it('should handle removed todo item for non-empty list', () => {
+        const createdAt = moment().toDate();
+        const removeItemId = 'todo-item-002';
+        const previousState: IToDoItem[] = [
+            {
+                id: 'todo-item-001',
+                text: 'Walk the dog',
+                createdAt: createdAt,
+                completed: true,
+            },
+            {
+                id: removeItemId,
+                text: 'Clean dishes',
+                createdAt: createdAt,
+                completed: true,
+            },
+        ];
+
+        const newState: IToDoItem[] = [
+            {
+                id: 'todo-item-001',
+                text: 'Walk the dog',
+                createdAt: createdAt,
+                completed: true,
+            },
+        ];
+
+        const res = reducer(previousState, todoItemRemoved(removeItemId));
+        expect(res.length).toBe(previousState.length - 1);
+        expect(res).toEqual(newState);
+    });
+
+    it('should handle removed todo item for empty list', () => {
+        const state: IToDoItem[] = [];
+
+        expect(reducer(state, todoItemRemoved(''))).toEqual(state);
+    });
+
+    it('should handle unchanged todo list when id doesn\'t exist for remove', () => {
+        const state: IToDoItem[] = [
+            {
+                id: 'todo-item-001',
+                text: 'Walk the dog',
+                createdAt: moment().toDate(),
+                completed: true,
+            }
+        ];
+
+        expect(reducer(state, todoItemRemoved('does-not-exist'))).toEqual(state);
+    });
+
+    it('should handle unchanged todo list when id is an empty string for remove', () => {
+        const state: IToDoItem[] = [
+            {
+                id: 'todo-item-001',
+                text: 'Walk the dog',
+                createdAt: moment().toDate(),
+                completed: true,
+            }
+        ];
+
+        expect(reducer(state, todoItemRemoved(''))).toEqual(state);
     });
 });

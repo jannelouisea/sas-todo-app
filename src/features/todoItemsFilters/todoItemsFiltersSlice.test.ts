@@ -6,13 +6,16 @@ import reducer, {
     showCompletedToggled
 } from './todoItemsFiltersSlice';
 
+import { Sort } from 'src/static/enums'
+
 describe('todoItemsSliceFilters', () => {
     it('should return the initial state', () => {
         expect(reducer(undefined, { type: undefined })).toEqual({
             searchTerm: '',
             showNewer: true,
             showOlder: true,
-            showCompleted: true
+            showCompleted: true,
+            sortBy: Sort.Incmpl1st
         });
     });
 
@@ -22,7 +25,8 @@ describe('todoItemsSliceFilters', () => {
                 searchTerm: '',
                 showNewer: true,
                 showOlder: true,
-                showCompleted: true
+                showCompleted: true,
+                sortBy: Sort.Incmpl1st
             };
 
             const searchTerm = 'bar';
@@ -30,7 +34,8 @@ describe('todoItemsSliceFilters', () => {
                 searchTerm,
                 showNewer: true,
                 showOlder: true,
-                showCompleted: true
+                showCompleted: true,
+                sortBy: Sort.Incmpl1st
             };
 
             expect(reducer(previousState, searchTermChanged(searchTerm))).toEqual(newState);
@@ -41,7 +46,8 @@ describe('todoItemsSliceFilters', () => {
                 searchTerm: 'foo',
                 showNewer: true,
                 showOlder: true,
-                showCompleted: true
+                showCompleted: true,
+                sortBy: Sort.Incmpl1st
             };
 
             const searchTerm = 'bar';
@@ -49,7 +55,8 @@ describe('todoItemsSliceFilters', () => {
                 searchTerm,
                 showNewer: true,
                 showOlder: true,
-                showCompleted: true
+                showCompleted: true,
+                sortBy: Sort.Incmpl1st
             };
 
             expect(reducer(previousState, searchTermChanged(searchTerm))).toEqual(newState);
@@ -60,7 +67,8 @@ describe('todoItemsSliceFilters', () => {
                 searchTerm: 'foo',
                 showNewer: true,
                 showOlder: true,
-                showCompleted: true
+                showCompleted: true,
+                sortBy: Sort.Incmpl1st
             };
 
             const searchTerm = '';
@@ -68,7 +76,8 @@ describe('todoItemsSliceFilters', () => {
                 searchTerm,
                 showNewer: true,
                 showOlder: true,
-                showCompleted: true
+                showCompleted: true,
+                sortBy: Sort.Incmpl1st
             };
 
             expect(reducer(previousState, searchTermChanged(searchTerm))).toEqual(newState);
@@ -80,14 +89,16 @@ describe('todoItemsSliceFilters', () => {
             searchTerm: '',
             showNewer: true,
             showOlder: true,
-            showCompleted: true
+            showCompleted: true,
+            sortBy: Sort.Incmpl1st
         };
 
         const newState: ITodoItemsFilters = {
             searchTerm: '',
             showNewer: false,
             showOlder: true,
-            showCompleted: true
+            showCompleted: true,
+            sortBy: Sort.Incmpl1st
         };
 
         expect(reducer(previousState, showNewerToggled())).toEqual(newState);
@@ -99,14 +110,16 @@ describe('todoItemsSliceFilters', () => {
             searchTerm: '',
             showNewer: true,
             showOlder: true,
-            showCompleted: true
+            showCompleted: true,
+            sortBy: Sort.Incmpl1st
         };
 
         const newState: ITodoItemsFilters = {
             searchTerm: '',
             showNewer: true,
             showOlder: false,
-            showCompleted: true
+            showCompleted: true,
+            sortBy: Sort.Incmpl1st
         };
 
         expect(reducer(previousState, showOlderToggled())).toEqual(newState);
@@ -118,14 +131,16 @@ describe('todoItemsSliceFilters', () => {
             searchTerm: '',
             showNewer: true,
             showOlder: true,
-            showCompleted: true
+            showCompleted: true,
+            sortBy: Sort.Incmpl1st
         };
 
         const newState: ITodoItemsFilters = {
             searchTerm: '',
             showNewer: true,
             showOlder: true,
-            showCompleted: false
+            showCompleted: false,
+            sortBy: Sort.Incmpl1st
         };
 
         expect(reducer(previousState, showCompletedToggled())).toEqual(newState);

@@ -3,6 +3,9 @@ import {
     IToDoItem
 } from 'src/interfaces'
 import moment from 'moment';
+import {
+    Sort
+} from 'src/static/enums'
 
 export type ITodoItemAddedPayload = {
     id: string,
@@ -43,23 +46,76 @@ const todoItemsSlice = createSlice({
     reducers: {
         todoItemAdded(state, action: PayloadAction<ITodoItemAddedPayload>) {
             const { id, text, createdAt } = action.payload;
-            state.unshift({
+            const newItem = {
                 id,
                 text,
                 createdAt,
                 completed: false
+            };
+
+            return [newItem, ...state];
+        },
+        todoItemToggled(state, action: PayloadAction<string>) {
+            return state.map(item => {
+                if (item.id !== action.payload) {
+                    return item
+                }
+
+                return {
+                    ...item,
+                    completed: !item.completed
+                }
             });
         },
-        // action - id of the item being toggled
-        todoItemToggled(state, action: PayloadAction<string>) {
-            const todoItem = state.find(item => item.id === action.payload);
-            if (todoItem) {
-                todoItem.completed = !todoItem.completed
+        todoItemRemoved(state, action: PayloadAction<string>) {
+            return state.filter(item => item.id !== action.payload);
+        },
+        todoItemsSorted(state, action: PayloadAction<Sort>) {
+            let newState = [...state];
+
+            switch (action.payload) {
+                case Sort.DateAsc:
+                    return newState.sort((itemA: IToDoItem, itemB: IToDoItem) =>
+                        moment(itemB.createdAt).format('YYYYMMDD').localeCompare(moment(itemA.createdAt).format('YYYYMMDD'))
+                    );
+                case Sort.DateDesc:
+                    return newState.sort((itemA: IToDoItem, itemB: IToDoItem) =>
+                        moment(itemA.createdAt).format('YYYYMMDD').localeCompare(moment(itemB.createdAt).format('YYYYMMDD'))
+                    );
+                case Sort.TextDesc:
+                    return newState.sort((itemA: IToDoItem, itemB: IToDoItem) =>
+                        itemB.text.localeCompare(itemA.text)
+                    );
+                case Sort.TextAsc:
+                    return newState.sort((itemA: IToDoItem, itemB: IToDoItem) =>
+                        itemA.text.localeCompare(itemB.text)
+                    );
+                case Sort.Cmpl1st:
+                    return newState.sort((itemA: IToDoItem, itemB: IToDoItem) => {
+                        if (itemA.completed === itemB.completed) {
+                            return moment(itemB.createdAt).format('YYYYMMDD').localeCompare(moment(itemA.createdAt).format('YYYYMMDD'))
+                        } else if (itemA.completed) {
+                            return -1;
+                        } else {
+                            return 1;
+                        }
+                    });
+                case Sort.Incmpl1st:
+                default:
+                    return newState.sort((itemA: IToDoItem, itemB: IToDoItem) => {
+                        if (itemA.completed === itemB.completed) {
+                            return moment(itemB.createdAt).format('YYYYMMDD').localeCompare(moment(itemA.createdAt).format('YYYYMMDD'))
+                        } else if (itemA.completed) {
+                            return 1;
+                        } else {
+                            return -1;
+                        }
+                    });
             }
         }
     }
 });
 
-export const { todoItemAdded, todoItemToggled } = todoItemsSlice.actions;
+export const { todoItemAdded, todoItemToggled, todoItemRemoved, todoItemsSorted } = todoItemsSlice.actions;
 
 export default todoItemsSlice.reducer;

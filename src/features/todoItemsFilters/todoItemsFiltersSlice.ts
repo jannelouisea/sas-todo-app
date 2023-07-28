@@ -1,17 +1,21 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
+import { Sort } from 'src/static/enums'
+
 export type ITodoItemsFilters = {
     searchTerm: string,
     showNewer: boolean,
     showOlder: boolean,
     showCompleted: boolean,
+    sortBy: Sort,
 }
 
 const initialState: ITodoItemsFilters = {
     searchTerm: '',
     showNewer: true,
     showOlder: true,
-    showCompleted: true
+    showCompleted: true,
+    sortBy: Sort.Incmpl1st,
 };
 
 const todoItemsFiltersSlice = createSlice({
@@ -19,17 +23,20 @@ const todoItemsFiltersSlice = createSlice({
     initialState,
     reducers: {
         searchTermChanged(state, action: PayloadAction<string>) {
-            state.searchTerm = action.payload;
+            return { ...state, searchTerm: action.payload }
         },
         showNewerToggled(state) {
-            state.showNewer = !state.showNewer;
+            return { ...state, showNewer: !state.showNewer }
         },
         showOlderToggled(state) {
-            state.showOlder = !state.showOlder;
+            return { ...state, showOlder: !state.showOlder }
         },
         showCompletedToggled(state) {
-            state.showCompleted = !state.showCompleted;
+            return { ...state, showCompleted: !state.showCompleted }
         },
+        sortByChanged(state, action: PayloadAction<Sort>) {
+            return { ...state, sortBy: action.payload }
+        }
     }
 });
 
@@ -38,6 +45,7 @@ export const {
     showNewerToggled,
     showOlderToggled,
     showCompletedToggled,
+    sortByChanged,
 } = todoItemsFiltersSlice.actions;
 
 export default todoItemsFiltersSlice.reducer;
