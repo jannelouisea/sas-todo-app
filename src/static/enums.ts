@@ -12,6 +12,7 @@ export enum MUIColor {
     Success = 'success',
     Warning = 'warning',
     Neutral = 'neutral',
+    Danger = 'danger',
 }
 
 export enum MUIVariant {
@@ -23,5 +24,14 @@ export enum MUIVariant {
 
 export enum MUISize {
     Small = 'sm',
+    Medium = 'md',
     Large = 'lg',
+}
+
+export enum MUIPos {
+    Right = 'right',
+}
+
+export enum MUIText {
+    Label = 'body3'
 }
