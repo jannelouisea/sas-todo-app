@@ -1,6 +1,8 @@
 import { useAppDispatch, useAppSelector } from 'src/app/hooks';
 import { searchTermChanged } from 'src/features/todoItemsFilters/todoItemsFiltersSlice';
 
+import { MUISize } from 'src/static/enums'
+
 import Input from '@mui/joy/Input';
 import SearchIcon from '@mui/icons-material/Search';
 import PropTypes from 'prop-types';
@@ -24,7 +26,7 @@ function SearchBar({ className }: Props) {
         <Input
             className={inputClassName}
             placeholder='Search to-do items...'
-            size='lg'
+            size={MUISize.Large}
             value={searchTerm}
             onChange={onSearchTermChanged}
             startDecorator={<SearchIcon sx={{ color: 'text.tertiary' }} />}
