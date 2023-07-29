@@ -15,6 +15,10 @@ export enum MUIColor {
     Danger = 'danger',
 }
 
+export enum MUIIconColor {
+    Inherit = 'inherit',
+}
+
 export enum MUIVariant {
     Solid = 'solid',
     Soft = 'soft',
