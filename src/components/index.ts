@@ -1,5 +1,6 @@
 import ToDoApp from 'src/components/ToDoApp/ToDoApp';
 import Item from 'src/components/Item/Item';
+import ItemCreatedDate from 'src/components/ItemCreatedDate/ItemCreatedDate';
 import RemoveItemButtton from 'src/components/Item/RemoveItemButtton';
 import ToggleItemButton from 'src/components/Item/ToggleItemButton';
 import ToDoList from 'src/components/ToDoList/ToDoList';
@@ -17,6 +18,7 @@ import Label from 'src/components/Label/Label';
 export {
     ToDoApp,
     Item,
+    ItemCreatedDate,
     RemoveItemButtton,
     ToggleItemButton,
     ToDoList,

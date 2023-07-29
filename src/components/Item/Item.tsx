@@ -1,20 +1,17 @@
 import Card from '@mui/joy/Card';
-import Typography from '@mui/joy/Typography';
 import PropTypes from 'prop-types';
-import moment from 'moment';
 
 import { useAppDispatch, useAppSelector } from 'src/app/hooks'
 import { todoItemToggled, todoItemsSorted } from 'src/features/todoItems/todoItemsSlice'
 import { isOlderItem as isOlderItemUtil } from 'src/utils';
-import HourglassBottomIcon from '@mui/icons-material/HourglassBottom';
-import classNames from 'classnames';
 
 import {
     IToDoItem
 } from 'src/interfaces/'
 import {
     RemoveItemButtton,
-    ToggleItemButton
+    ToggleItemButton,
+    ItemCreatedDate
 } from 'src/components'
 import {
     MUIColor,
@@ -35,8 +32,6 @@ function Item({ item }: Props) {
     const color: MUIColor = item.completed ? MUIColor.Success : isOlderItem ? MUIColor.Warning : MUIColor.Primary;
     const cardVariant: MUIVariant = item.completed ? MUIVariant.Soft : MUIVariant.Outlined;
     const buttonVariant: MUIVariant = item.completed ? MUIVariant.Solid : MUIVariant.Outlined;
-
-    const isOlderIconClassNames = classNames({ 'hidden': item.completed || (!isOlderItem) });
 
     const onToggleItem = (id: string) => {
         dispatch(todoItemToggled(id));
@@ -64,19 +59,7 @@ function Item({ item }: Props) {
                 </div>
                 <div className="flex-1">
                     <span>{item.text}</span>
-                    <div className='flex items-center'>
-                        <Typography
-                            textColor={item.completed ? 'neutral.700' : 'neutral.500'}
-                            level='body3'
-                            variant={MUIVariant.Plain}
-                            sx={{ padding: 0, paddingTop: '.25rem', marginLeft: '.25rem', marginRight: '.25rem', }}
-                        >
-                            {`Created ${moment(item.createdAt).format('lll')}`}
-                        </Typography>
-                        <div className={isOlderIconClassNames}>
-                            <HourglassBottomIcon sx={{ fontSize: '1rem' }} />
-                        </div>
-                    </div>
+                    <ItemCreatedDate createdAt={item.createdAt} isCompleted={item.completed} isOlder={isOlderItem} />
                 </div>
                 <div className="ml-4 mr-2 invisible group-hover:visible">
                     <RemoveItemButtton itemId={item.id} color={color} />
