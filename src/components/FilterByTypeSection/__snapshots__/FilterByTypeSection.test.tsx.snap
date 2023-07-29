@@ -1,0 +1,117 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FilterByTypeSection renders correctly 1`] = `
+<div
+  className="filter-by-type-section foo"
+>
+  <div
+    className=""
+  >
+    <p
+      className="MuiTypography-root MuiTypography-body3 MuiTypography-colorNeutral MuiTypography-variantPlain css-1v5xtsw-JoyTypography-root"
+    >
+      Filter by
+    </p>
+  </div>
+  <div
+    className="filter-types"
+  >
+    <div
+      className="filter-by-type"
+    >
+      <button
+        aria-label="Filter by newer"
+        className="MuiButton-root MuiButton-variantSolid MuiButton-colorPrimary MuiButton-sizeSm filter-by-type css-1d374uw-JoyButton-root"
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseLeave={[Function]}
+      >
+        <span
+          className="MuiButton-startDecorator css-187ulk2-JoyButton-startDecorator"
+        >
+          <svg
+            aria-hidden={true}
+            className="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-ptiqhd-MuiSvgIcon-root"
+            data-testid="HourglassTopIcon"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="m6 2 .01 6L10 12l-3.99 4.01L6 22h12v-6l-4-4 4-3.99V2H6zm10 14.5V20H8v-3.5l4-4 4 4z"
+            />
+          </svg>
+        </span>
+        Newer
+      </button>
+    </div>
+    <div
+      className="filter-by-type"
+    >
+      <button
+        aria-label="Filter by older"
+        className="MuiButton-root MuiButton-variantSolid MuiButton-colorWarning MuiButton-sizeSm filter-by-type css-16bqlfy-JoyButton-root"
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseLeave={[Function]}
+      >
+        <span
+          className="MuiButton-startDecorator css-187ulk2-JoyButton-startDecorator"
+        >
+          <svg
+            aria-hidden={true}
+            className="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-ptiqhd-MuiSvgIcon-root"
+            data-testid="HourglassBottomIcon"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="m18 22-.01-6L14 12l3.99-4.01L18 2H6v6l4 4-4 3.99V22h12zM8 7.5V4h8v3.5l-4 4-4-4z"
+            />
+          </svg>
+        </span>
+        Older
+      </button>
+    </div>
+    <div
+      className="filter-by-type"
+    >
+      <button
+        aria-label="Filter by completed"
+        className="MuiButton-root MuiButton-variantSolid MuiButton-colorSuccess MuiButton-sizeSm filter-by-type css-1yqcigs-JoyButton-root"
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseLeave={[Function]}
+      >
+        <span
+          className="MuiButton-startDecorator css-187ulk2-JoyButton-startDecorator"
+        >
+          <svg
+            aria-hidden={true}
+            className="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-ptiqhd-MuiSvgIcon-root"
+            data-testid="DoneIcon"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"
+            />
+          </svg>
+        </span>
+        Completed
+      </button>
+    </div>
+  </div>
+</div>
+`;
