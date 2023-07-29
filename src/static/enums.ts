@@ -19,6 +19,10 @@ export enum MUIIconColor {
     Inherit = 'inherit',
 }
 
+export enum MUIIconSize {
+    Inherit = 'inherit',
+}
+
 export enum MUIVariant {
     Solid = 'solid',
     Soft = 'soft',
