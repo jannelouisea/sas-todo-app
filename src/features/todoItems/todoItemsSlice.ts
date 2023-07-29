@@ -74,11 +74,11 @@ const todoItemsSlice = createSlice({
             let newState = [...state];
 
             switch (action.payload) {
-                case Sort.DateAsc:
+                case Sort.DateDesc:
                     return newState.sort((itemA: IToDoItem, itemB: IToDoItem) =>
                         moment(itemB.createdAt).format('YYYYMMDD').localeCompare(moment(itemA.createdAt).format('YYYYMMDD'))
                     );
-                case Sort.DateDesc:
+                case Sort.DateAsc:
                     return newState.sort((itemA: IToDoItem, itemB: IToDoItem) =>
                         moment(itemA.createdAt).format('YYYYMMDD').localeCompare(moment(itemB.createdAt).format('YYYYMMDD'))
                     );
