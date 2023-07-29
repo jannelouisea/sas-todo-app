@@ -2,6 +2,9 @@ import IconButton from '@mui/joy/IconButton';
 import DoneIcon from '@mui/icons-material/Done';
 import PropTypes from 'prop-types';
 
+import { todoItemToggled, todoItemsSorted } from 'src/features/todoItems/todoItemsSlice'
+import { useAppDispatch, useAppSelector } from 'src/app/hooks';
+
 import {
     MUIColor,
     MUIVariant,
@@ -9,19 +12,27 @@ import {
 } from 'src/static/enums'
 
 type Props = {
+    itemId: string,
     color: MUIColor,
     variant: MUIVariant,
-    onClick: React.MouseEventHandler<HTMLButtonElement>,
 }
 
-function ToggleItemButton({ color, variant, onClick }: Props) {
+function ToggleItemButton({ itemId, color, variant }: Props) {
+    const dispatch = useAppDispatch();
+    const sortBy = useAppSelector(state => state.todoItemsFilters.sortBy);
+
+    const toggleItem = () => {
+        dispatch(todoItemToggled(itemId));
+        dispatch(todoItemsSorted(sortBy));
+    }
+
     return (
         <IconButton
             color={color}
             id='complete-item-button'
             variant={variant}
             aria-label='Complete item button'
-            onClick={onClick}
+            onClick={toggleItem}
             sx={{ borderRadius: '50%' }}
             size={MUISize.Small}
         >
@@ -31,15 +42,14 @@ function ToggleItemButton({ color, variant, onClick }: Props) {
 }
 
 ToggleItemButton.propTypes = {
+    itemId: PropTypes.string,
     color: PropTypes.oneOf([...Object.values(MUIColor)]),
     variant: PropTypes.oneOf([...Object.values(MUIVariant)]),
-    onClick: () => { }
 }
 
 ToggleItemButton.defaultProps = {
     color: MUIColor.Primary,
     variant: MUIVariant.Outlined,
-    onClick: () => { }
 }
 
 export default ToggleItemButton;
