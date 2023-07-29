@@ -65,6 +65,7 @@ function SortByDropdown({ className }: Props) {
                         }
                     },
                 }}
+                aria-label='Sort by select'
             >
                 {
                     sortByOptions.map((option: ISortByItem, index: number) =>
