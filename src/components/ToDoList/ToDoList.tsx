@@ -24,7 +24,7 @@ function ToDoList() {
     const filteredItemsExist = filteredItems.length > 0;
 
     return (
-        <div className="grid grid-flow-row row-span-1 overflow-auto">
+        <div className="grid grid-flow-row row-span-1 overflow-hidden overflow-y-auto no-scrollbar">
             {
                 todoItemsExist ?
                     filteredItemsExist ?

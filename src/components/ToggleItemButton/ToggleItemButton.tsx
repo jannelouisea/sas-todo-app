@@ -8,7 +8,8 @@ import { useAppDispatch, useAppSelector } from 'src/app/hooks';
 import {
     MUIColor,
     MUIVariant,
-    MUISize
+    MUISize,
+    MUIIconSize
 } from 'src/static/enums'
 
 type Props = {
@@ -26,6 +27,8 @@ function ToggleItemButton({ itemId, color, variant }: Props) {
         dispatch(todoItemsSorted(sortBy));
     }
 
+    const muiIconBtnStyles = { borderRadius: '50%' }
+
     return (
         <IconButton
             color={color}
@@ -33,10 +36,10 @@ function ToggleItemButton({ itemId, color, variant }: Props) {
             variant={variant}
             aria-label='Complete item button'
             onClick={toggleItem}
-            sx={{ borderRadius: '50%' }}
+            sx={muiIconBtnStyles}
             size={MUISize.Small}
         >
-            <DoneIcon fontSize='inherit' />
+            <DoneIcon fontSize={MUIIconSize.Inherit} />
         </IconButton>
     );
 }

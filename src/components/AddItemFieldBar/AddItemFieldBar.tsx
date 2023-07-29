@@ -39,9 +39,15 @@ function AddItemFieldBar({ className }: Props) {
         setHasError(isEmpty);
     }, [text, textChanged]);
 
-    const onTextChanged = (evt: React.ChangeEvent<HTMLInputElement>) => {
+    const handleTextChanged = (evt: React.ChangeEvent<HTMLInputElement>) => {
         setTextChanged(true);
         setText(evt.target.value);
+    }
+
+    const handleKeyDown = (evt: React.KeyboardEvent) => {
+        if (evt.key === 'Enter') {
+            onAddItem();
+        }
     }
 
     const onAddItem = () => {
@@ -58,7 +64,7 @@ function AddItemFieldBar({ className }: Props) {
         }
     };
 
-    const onInputBlur = () => {
+    const handleInputBlur = () => {
         setTextChanged(false);
     }
 
@@ -79,8 +85,9 @@ function AddItemFieldBar({ className }: Props) {
                     placeholder={PLACEHOLDER}
                     size={MUISize.Large}
                     value={text}
-                    onChange={onTextChanged}
-                    onBlur={onInputBlur}
+                    onChange={handleTextChanged}
+                    onKeyDown={handleKeyDown}
+                    onBlur={handleInputBlur}
                     sx={muiInputStyles}
                     error={hasError}
                     aria-label='Add to-do item input field'

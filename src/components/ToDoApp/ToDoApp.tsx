@@ -20,9 +20,7 @@ function ToDoApp() {
                 </div>
                 <div className='to-do-app_section'><Divider /></div>
                 <AddItemFieldBar className='to-do-app_section' />
-                <div className='overflow-hidden overflow-y-auto no-scrollbar'>
-                    <ToDoList />
-                </div>
+                <ToDoList />
             </div>
         </div>
     );
