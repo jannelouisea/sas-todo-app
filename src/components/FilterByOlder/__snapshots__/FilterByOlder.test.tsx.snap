@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FilterByOlder renders correctly 1`] = `
+<div
+  className="foo"
+>
+  <button
+    aria-label="Filter by older"
+    className="MuiButton-root MuiButton-variantSolid MuiButton-colorWarning MuiButton-sizeSm foo css-16bqlfy-JoyButton-root"
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    onKeyDown={[Function]}
+    onKeyUp={[Function]}
+    onMouseDown={[Function]}
+    onMouseLeave={[Function]}
+  >
+    <span
+      className="MuiButton-startDecorator css-187ulk2-JoyButton-startDecorator"
+    >
+      <svg
+        aria-hidden={true}
+        className="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-ptiqhd-MuiSvgIcon-root"
+        data-testid="HourglassBottomIcon"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="m18 22-.01-6L14 12l3.99-4.01L18 2H6v6l4 4-4 3.99V22h12zM8 7.5V4h8v3.5l-4 4-4-4z"
+        />
+      </svg>
+    </span>
+    Older
+  </button>
+</div>
+`;

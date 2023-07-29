@@ -1,6 +1,7 @@
 import Select from '@mui/joy/Select';
 import Option from '@mui/joy/Option';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 
 import { ISortByItem } from 'src/interfaces';
 import { Sort } from 'src/static/enums';
@@ -48,8 +49,10 @@ function SortByDropdown({ className }: Props) {
         dispatch(todoItemsSorted(newValue as Sort));
     }
 
+    const rootStyles = classNames('sort-by-dropdown', className);
+
     return (
-        <div className='sort-by-dropdown'>
+        <div className={rootStyles}>
             <Label text='Sort by' />
             <Select
                 defaultValue={Sort.Incmpl1st}
