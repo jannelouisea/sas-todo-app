@@ -4,6 +4,9 @@ import {
 } from 'src/interfaces/'
 
 const OLDER_THRESHOLD = 5;
-const isOlderitemUtil = (item: IToDoItem): boolean => moment().diff(item.createdAt, 'days') > OLDER_THRESHOLD;
+const isOlderitemUtil = (item: IToDoItem): boolean => {
+    const createdAt = moment.unix(item.createdAt).toDate();
+    return moment().diff(createdAt, 'days') > OLDER_THRESHOLD;
+};
 
 export default isOlderitemUtil;

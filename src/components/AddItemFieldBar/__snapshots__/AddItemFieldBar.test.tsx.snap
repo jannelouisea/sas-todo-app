@@ -18,7 +18,6 @@ exports[`AddItemFieldBar renders correctly 1`] = `
         onBlur={[Function]}
         onChange={[Function]}
         onFocus={[Function]}
-        onKeyDown={[Function]}
         placeholder="What do I need to-do?"
         required={false}
         value=""

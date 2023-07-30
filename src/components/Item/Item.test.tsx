@@ -27,7 +27,7 @@ describe('Item', () => {
         const item: IToDoItem = {
             id: 'foo-id',
             text: 'To-do foo',
-            createdAt: moment('2023-07-15').toDate(),
+            createdAt: moment('2023-07-15').unix(),
             completed: false
         };
 
@@ -45,7 +45,7 @@ describe('Item', () => {
         const item: IToDoItem = {
             id: 'foo-id',
             text: 'To-do foo',
-            createdAt: moment('2023-07-15').toDate(),
+            createdAt: moment('2023-07-15').unix(),
             completed: true
         };
 
@@ -63,7 +63,7 @@ describe('Item', () => {
         const item: IToDoItem = {
             id: 'foo-id',
             text: 'To-do foo',
-            createdAt: moment('2023-06-15').toDate(),
+            createdAt: moment('2023-06-15').unix(),
             completed: false
         };
 
@@ -85,7 +85,7 @@ describe('Item', () => {
         const item: IToDoItem = {
             id: 'foo-id',
             text: 'To-do foo',
-            createdAt: moment('2023-06-15').toDate(),
+            createdAt: moment('2023-06-15').unix(),
             completed: false
         };
 

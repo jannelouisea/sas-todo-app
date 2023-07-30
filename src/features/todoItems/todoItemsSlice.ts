@@ -10,32 +10,33 @@ import {
 export type ITodoItemAddedPayload = {
     id: string,
     text: string,
-    createdAt: Date,
+    createdAt: number,
 };
 
 const initialState: IToDoItem[] = [
     {
         id: 'init-item-001',
         text: 'Clean the house',
-        createdAt: moment().toDate(),
+        createdAt: moment().unix(),
         completed: false
     },
     {
         id: 'init-item-002',
         text: 'Pack things for upcoming trip',
-        createdAt: moment('2023-07-18').toDate(),
+        createdAt: 1689652800, // Tue Jul 18 2023 00:00:00 GMT-0400 (EST)
         completed: false
     },
     {
         id: 'init-item-003',
         text: 'Make dinner',
-        createdAt: moment('2023-07-25').toDate(),
+        createdAt: 1690257600, // Tue Jul 25 2023 00:00:00 GMT-0400 (EST)
         completed: true
     },
     {
         id: 'init-item-004',
         text: 'Prepare for SAS Interview',
-        createdAt: moment('2023-07-15').toDate(),
+        createdAt: 1689393600, // Sat Jul 15 2023 00:00:00 GMT-0400 (EST)
+
         completed: true
     },
 ];
@@ -76,11 +77,13 @@ const todoItemsSlice = createSlice({
             switch (action.payload) {
                 case Sort.DateDesc:
                     return newState.sort((itemA: IToDoItem, itemB: IToDoItem) =>
-                        moment(itemB.createdAt).format('YYYYMMDD').localeCompare(moment(itemA.createdAt).format('YYYYMMDD'))
+                        itemB.createdAt - itemA.createdAt
+                        //moment(itemB.createdAt).format('YYYYMMDD').localeCompare(moment(itemA.createdAt).format('YYYYMMDD'))
                     );
                 case Sort.DateAsc:
                     return newState.sort((itemA: IToDoItem, itemB: IToDoItem) =>
-                        moment(itemA.createdAt).format('YYYYMMDD').localeCompare(moment(itemB.createdAt).format('YYYYMMDD'))
+                        itemA.createdAt - itemB.createdAt
+                        //moment(itemA.createdAt).format('YYYYMMDD').localeCompare(moment(itemB.createdAt).format('YYYYMMDD'))
                     );
                 case Sort.TextDesc:
                     return newState.sort((itemA: IToDoItem, itemB: IToDoItem) =>
@@ -93,7 +96,8 @@ const todoItemsSlice = createSlice({
                 case Sort.Cmpl1st:
                     return newState.sort((itemA: IToDoItem, itemB: IToDoItem) => {
                         if (itemA.completed === itemB.completed) {
-                            return moment(itemB.createdAt).format('YYYYMMDD').localeCompare(moment(itemA.createdAt).format('YYYYMMDD'))
+                            //return moment(itemB.createdAt).format('YYYYMMDD').localeCompare(moment(itemA.createdAt).format('YYYYMMDD'))
+                            return itemB.createdAt - itemA.createdAt;
                         } else if (itemA.completed) {
                             return -1;
                         } else {
@@ -104,7 +108,8 @@ const todoItemsSlice = createSlice({
                 default:
                     return newState.sort((itemA: IToDoItem, itemB: IToDoItem) => {
                         if (itemA.completed === itemB.completed) {
-                            return moment(itemB.createdAt).format('YYYYMMDD').localeCompare(moment(itemA.createdAt).format('YYYYMMDD'))
+                            //return moment(itemB.createdAt).format('YYYYMMDD').localeCompare(moment(itemA.createdAt).format('YYYYMMDD'))
+                            return itemB.createdAt - itemA.createdAt;
                         } else if (itemA.completed) {
                             return 1;
                         } else {

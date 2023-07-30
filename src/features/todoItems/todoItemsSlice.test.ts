@@ -15,21 +15,21 @@ describe('todoItemsSlice', () => {
         expect(initState[1]).toEqual({
             id: 'init-item-002',
             text: 'Pack things for upcoming trip',
-            createdAt: moment('2023-07-18').toDate(),
+            createdAt: 1689652800,
             completed: false
         });
 
         expect(initState[2]).toEqual({
             id: 'init-item-003',
             text: 'Make dinner',
-            createdAt: moment('2023-07-25').toDate(),
+            createdAt: 1690257600,
             completed: true
         });
 
         expect(initState[3]).toEqual({
             id: 'init-item-004',
             text: 'Prepare for SAS Interview',
-            createdAt: moment('2023-07-15').toDate(),
+            createdAt: 1689393600,
             completed: true
         });
     });
@@ -39,7 +39,7 @@ describe('todoItemsSlice', () => {
 
         const id = 'todo-item-001';
         const text = 'Clean dishes';
-        const createdAt = moment().toDate();
+        const createdAt = moment().unix();
 
         const newState: IToDoItem[] = [{
             id,
@@ -52,7 +52,7 @@ describe('todoItemsSlice', () => {
     });
 
     it('should handle an item added to a existing list', () => {
-        const createdAt01 = moment().toDate();
+        const createdAt01 = moment().unix();
         const previousState: IToDoItem[] = [
             {
                 id: 'todo-item-001',
@@ -64,7 +64,7 @@ describe('todoItemsSlice', () => {
 
         const id = 'todo-item-002';
         const text = 'Clean dishes';
-        const createdAt = moment().toDate();
+        const createdAt = moment().unix();
 
         const newState: IToDoItem[] = [
             {
@@ -86,7 +86,7 @@ describe('todoItemsSlice', () => {
 
     it('should handle an item toggled completed to true', () => {
         const id = 'todo-item-001';
-        const createdAt = moment().toDate();
+        const createdAt = moment().unix();
         const previousState: IToDoItem[] = [
             {
                 id,
@@ -109,7 +109,7 @@ describe('todoItemsSlice', () => {
 
     it('should handle an item toggled completed to false', () => {
         const id = 'todo-item-001';
-        const createdAt = moment().toDate();
+        const createdAt = moment().unix();
         const previousState: IToDoItem[] = [
             {
                 id,
@@ -135,7 +135,7 @@ describe('todoItemsSlice', () => {
             {
                 id: 'todo-item-001',
                 text: 'Walk the dog',
-                createdAt: moment().toDate(),
+                createdAt: moment().unix(),
                 completed: true,
             }
         ];
@@ -148,7 +148,7 @@ describe('todoItemsSlice', () => {
             {
                 id: 'todo-item-001',
                 text: 'Walk the dog',
-                createdAt: moment().toDate(),
+                createdAt: moment().unix(),
                 completed: true,
             }
         ];
@@ -157,7 +157,7 @@ describe('todoItemsSlice', () => {
     });
 
     it('should handle removed todo item for non-empty list', () => {
-        const createdAt = moment().toDate();
+        const createdAt = moment().unix();
         const removeItemId = 'todo-item-002';
         const previousState: IToDoItem[] = [
             {
@@ -199,7 +199,7 @@ describe('todoItemsSlice', () => {
             {
                 id: 'todo-item-001',
                 text: 'Walk the dog',
-                createdAt: moment().toDate(),
+                createdAt: moment().unix(),
                 completed: true,
             }
         ];
@@ -212,7 +212,7 @@ describe('todoItemsSlice', () => {
             {
                 id: 'todo-item-001',
                 text: 'Walk the dog',
-                createdAt: moment().toDate(),
+                createdAt: moment().unix(),
                 completed: true,
             }
         ];

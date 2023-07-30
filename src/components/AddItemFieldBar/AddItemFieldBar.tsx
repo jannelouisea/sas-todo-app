@@ -44,18 +44,12 @@ function AddItemFieldBar({ className }: Props) {
         setText(evt.target.value);
     }
 
-    const handleKeyDown = (evt: React.KeyboardEvent) => {
-        if (evt.key === 'Enter') {
-            onAddItem();
-        }
-    }
-
-    const onAddItem = () => {
+    const addItem = () => {
         if (text !== '') {
             dispatch(todoItemAdded({
                 id: uniqid(),
                 text,
-                createdAt: moment().toDate(),
+                createdAt: moment().unix(),
             }));
             dispatch(todoItemsSorted(sortBy));
             resetState();
@@ -86,7 +80,6 @@ function AddItemFieldBar({ className }: Props) {
                     size={MUISize.Large}
                     value={text}
                     onChange={handleTextChanged}
-                    onKeyDown={handleKeyDown}
                     onBlur={handleInputBlur}
                     sx={muiInputStyles}
                     error={hasError}
@@ -105,7 +98,7 @@ function AddItemFieldBar({ className }: Props) {
                 }
             </div>
             <div className='add-item-button'>
-                <AddItemButton onClick={onAddItem} />
+                <AddItemButton onClick={addItem} />
             </div>
         </div>
     );

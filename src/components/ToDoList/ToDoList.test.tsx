@@ -22,13 +22,13 @@ describe('ToDoList', () => {
                 {
                     id: 'item-001',
                     text: 'Test newer',
-                    createdAt: moment().toDate(),
+                    createdAt: moment().unix(),
                     completed: false
                 },
                 {
                     id: 'item-002',
                     text: 'Test newer again',
-                    createdAt: moment().toDate(),
+                    createdAt: moment().unix(),
                     completed: false
                 },
             ],
@@ -66,13 +66,13 @@ describe('ToDoList', () => {
                 {
                     id: 'item-001',
                     text: 'Test older',
-                    createdAt: moment('2023-07-18').toDate(),
+                    createdAt: moment('2023-07-18').unix(),
                     completed: false
                 },
                 {
                     id: 'item-002',
                     text: 'Test older again',
-                    createdAt: moment('2023-07-18').toDate(),
+                    createdAt: moment('2023-07-18').unix(),
                     completed: false
                 },
             ],
@@ -102,13 +102,13 @@ describe('ToDoList', () => {
                 {
                     id: 'item-001',
                     text: 'Test completed',
-                    createdAt: moment('2023-07-18').toDate(),
+                    createdAt: moment('2023-07-18').unix(),
                     completed: true
                 },
                 {
                     id: 'item-002',
                     text: 'Test completed again',
-                    createdAt: moment('2023-07-18').toDate(),
+                    createdAt: moment('2023-07-18').unix(),
                     completed: true
                 },
             ],
@@ -139,13 +139,13 @@ describe('ToDoList', () => {
                 {
                     id: 'item-001',
                     text: 'Test newer',
-                    createdAt: moment().toDate(),
+                    createdAt: moment().unix(),
                     completed: false
                 },
                 {
                     id: 'item-002',
                     text: 'Test newer again',
-                    createdAt: moment().toDate(),
+                    createdAt: moment().unix(),
                     completed: false
                 },
             ],
@@ -184,13 +184,13 @@ describe('ToDoList', () => {
                 {
                     id: 'item-001',
                     text: 'Test older',
-                    createdAt: moment('2023-07-18').toDate(),
+                    createdAt: moment('2023-07-18').unix(),
                     completed: false
                 },
                 {
                     id: 'item-002',
                     text: 'Test older again',
-                    createdAt: moment('2023-07-18').toDate(),
+                    createdAt: moment('2023-07-18').unix(),
                     completed: false
                 },
             ],
@@ -220,13 +220,13 @@ describe('ToDoList', () => {
                 {
                     id: 'item-001',
                     text: 'Test completed',
-                    createdAt: moment('2023-07-18').toDate(),
+                    createdAt: moment('2023-07-18').unix(),
                     completed: true
                 },
                 {
                     id: 'item-002',
                     text: 'Test completed again',
-                    createdAt: moment('2023-07-18').toDate(),
+                    createdAt: moment('2023-07-18').unix(),
                     completed: true
                 },
             ],
@@ -256,13 +256,13 @@ describe('ToDoList', () => {
                 {
                     id: 'item-001',
                     text: 'testing',
-                    createdAt: moment('2023-07-18').toDate(),
+                    createdAt: moment('2023-07-18').unix(),
                     completed: true
                 },
                 {
                     id: 'item-002',
                     text: 'not matching',
-                    createdAt: moment('2023-07-18').toDate(),
+                    createdAt: moment('2023-07-18').unix(),
                     completed: true
                 },
             ],

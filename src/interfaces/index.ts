@@ -5,7 +5,7 @@ import {
 export type IToDoItem = {
     id: string,
     text: string,
-    createdAt: Date,
+    createdAt: number, // Unix timestamp
     completed: boolean
 }
 

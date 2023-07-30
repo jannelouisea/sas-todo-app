@@ -1,9 +1,8 @@
 import ItemCreatedDate from './ItemCreatedDate';
 import renderer from 'react-test-renderer';
-import moment from 'moment';
 
 describe('ItemCreatedDate', () => {
-    const date = moment('2023-07-18').toDate();
+    const date = 1689652800; // Tue Jul 18 2023 00:00:00 GMT-0400 (EST)
 
     it('renders correctly', () => {
         const tree = renderer

@@ -9,7 +9,7 @@ import {
 } from 'src/static/enums';
 
 type Props = {
-    createdAt: Date,
+    createdAt: number,
     isCompleted: boolean,
     isOlder: boolean,
 }
@@ -29,7 +29,7 @@ function ItemCreatedDate({ createdAt, isCompleted, isOlder }: Props) {
                 variant={MUIVariant.Plain}
                 sx={muiTextStyles}
             >
-                {`Created ${moment(createdAt).format('lll')}`}
+                {`Created ${moment.unix(createdAt).format('lll')}`}
             </Typography>
             <div className={isOlderIconClassNames}>
                 <HourglassBottomIcon sx={muiIconStyles} />
@@ -39,7 +39,7 @@ function ItemCreatedDate({ createdAt, isCompleted, isOlder }: Props) {
 }
 
 ItemCreatedDate.propTypes = {
-    createdAt: PropTypes.object,
+    createdAt: PropTypes.number,
     isCompleted: PropTypes.bool,
     isOlder: PropTypes.bool,
 }
