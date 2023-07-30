@@ -1,5 +1,5 @@
+import { ITodoItemsFilters } from 'src/interfaces';
 import reducer, {
-    ITodoItemsFilters,
     searchTermChanged,
     showNewerToggled,
     showOlderToggled,

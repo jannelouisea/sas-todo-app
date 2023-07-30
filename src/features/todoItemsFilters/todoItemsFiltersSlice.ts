@@ -1,14 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
 import { Sort } from 'src/static/enums'
-
-export type ITodoItemsFilters = {
-    searchTerm: string,
-    showNewer: boolean,
-    showOlder: boolean,
-    showCompleted: boolean,
-    sortBy: Sort,
-}
+import { ITodoItemsFilters } from 'src/interfaces';
 
 const initialState: ITodoItemsFilters = {
     searchTerm: '',
