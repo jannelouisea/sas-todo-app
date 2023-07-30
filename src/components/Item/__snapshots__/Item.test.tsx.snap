@@ -1,0 +1,417 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Item renders completed item 1`] = `
+<div
+  className="MuiCard-root MuiCard-vertical MuiCard-variantSoft MuiCard-colorSuccess MuiCard-sizeSm drop-shadow css-17iutky-JoyCard-root"
+>
+  <div
+    className="to-do-item"
+    data-first-child=""
+    data-last-child=""
+  >
+    <div
+      className="to-do-item_toggle"
+    >
+      <button
+        aria-label="Complete item button"
+        className="MuiIconButton-root MuiIconButton-variantSolid MuiIconButton-colorSuccess MuiIconButton-sizeSm css-qxb87h-JoyIconButton-root"
+        id="complete-item-button"
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseLeave={[Function]}
+      >
+        <svg
+          aria-hidden={true}
+          className="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+          data-testid="DoneIcon"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"
+          />
+        </svg>
+      </button>
+    </div>
+    <div
+      className="to-do-item_text"
+    >
+      <span>
+        To-do foo
+      </span>
+      <div
+        className="item-created-date"
+      >
+        <p
+          className="MuiTypography-root MuiTypography-body3 MuiTypography-colorNeutral MuiTypography-variantPlain css-1oc79or-JoyTypography-root"
+        >
+          Created Jul 15, 2023 12:00 AM
+        </p>
+        <div
+          className="hidden"
+        >
+          <svg
+            aria-hidden={true}
+            className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-17e890r-MuiSvgIcon-root"
+            data-testid="HourglassBottomIcon"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="m18 22-.01-6L14 12l3.99-4.01L18 2H6v6l4 4-4 3.99V22h12zM8 7.5V4h8v3.5l-4 4-4-4z"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div
+      className="to-do-item_remove-btn"
+    >
+      <button
+        aria-label="Remove item button"
+        aria-labelledby={null}
+        className="MuiIconButton-root MuiIconButton-variantPlain MuiIconButton-colorSuccess MuiIconButton-sizeSm css-1raploq-JoyIconButton-root"
+        id="remove-item-button"
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseLeave={[Function]}
+        onMouseOver={[Function]}
+        onTouchEnd={[Function]}
+        onTouchStart={[Function]}
+      >
+        <svg
+          aria-hidden={true}
+          className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1ekxpud-MuiSvgIcon-root"
+          data-testid="DeleteIcon"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"
+          />
+        </svg>
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Item renders correctly 1`] = `
+<div
+  className="MuiCard-root MuiCard-vertical MuiCard-variantOutlined MuiCard-colorWarning MuiCard-sizeSm drop-shadow css-1l37zdt-JoyCard-root"
+>
+  <div
+    className="to-do-item"
+    data-first-child=""
+    data-last-child=""
+  >
+    <div
+      className="to-do-item_toggle"
+    >
+      <button
+        aria-label="Complete item button"
+        className="MuiIconButton-root MuiIconButton-variantOutlined MuiIconButton-colorWarning MuiIconButton-sizeSm css-pxh0lg-JoyIconButton-root"
+        id="complete-item-button"
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseLeave={[Function]}
+      >
+        <svg
+          aria-hidden={true}
+          className="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+          data-testid="DoneIcon"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"
+          />
+        </svg>
+      </button>
+    </div>
+    <div
+      className="to-do-item_text"
+    >
+      <span>
+        To-do foo
+      </span>
+      <div
+        className="item-created-date"
+      >
+        <p
+          className="MuiTypography-root MuiTypography-body3 MuiTypography-colorNeutral MuiTypography-variantPlain css-gfqtt1-JoyTypography-root"
+        >
+          Created Jul 15, 2023 12:00 AM
+        </p>
+        <div
+          className=""
+        >
+          <svg
+            aria-hidden={true}
+            className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-17e890r-MuiSvgIcon-root"
+            data-testid="HourglassBottomIcon"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="m18 22-.01-6L14 12l3.99-4.01L18 2H6v6l4 4-4 3.99V22h12zM8 7.5V4h8v3.5l-4 4-4-4z"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div
+      className="to-do-item_remove-btn"
+    >
+      <button
+        aria-label="Remove item button"
+        aria-labelledby={null}
+        className="MuiIconButton-root MuiIconButton-variantPlain MuiIconButton-colorWarning MuiIconButton-sizeSm css-punmis-JoyIconButton-root"
+        id="remove-item-button"
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseLeave={[Function]}
+        onMouseOver={[Function]}
+        onTouchEnd={[Function]}
+        onTouchStart={[Function]}
+      >
+        <svg
+          aria-hidden={true}
+          className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1ekxpud-MuiSvgIcon-root"
+          data-testid="DeleteIcon"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"
+          />
+        </svg>
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Item renders newer item 1`] = `
+<div
+  className="MuiCard-root MuiCard-vertical MuiCard-variantOutlined MuiCard-colorWarning MuiCard-sizeSm drop-shadow css-1l37zdt-JoyCard-root"
+>
+  <div
+    className="to-do-item"
+    data-first-child=""
+    data-last-child=""
+  >
+    <div
+      className="to-do-item_toggle"
+    >
+      <button
+        aria-label="Complete item button"
+        className="MuiIconButton-root MuiIconButton-variantOutlined MuiIconButton-colorWarning MuiIconButton-sizeSm css-pxh0lg-JoyIconButton-root"
+        id="complete-item-button"
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseLeave={[Function]}
+      >
+        <svg
+          aria-hidden={true}
+          className="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+          data-testid="DoneIcon"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"
+          />
+        </svg>
+      </button>
+    </div>
+    <div
+      className="to-do-item_text"
+    >
+      <span>
+        To-do foo
+      </span>
+      <div
+        className="item-created-date"
+      >
+        <p
+          className="MuiTypography-root MuiTypography-body3 MuiTypography-colorNeutral MuiTypography-variantPlain css-gfqtt1-JoyTypography-root"
+        >
+          Created Jun 15, 2023 12:00 AM
+        </p>
+        <div
+          className=""
+        >
+          <svg
+            aria-hidden={true}
+            className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-17e890r-MuiSvgIcon-root"
+            data-testid="HourglassBottomIcon"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="m18 22-.01-6L14 12l3.99-4.01L18 2H6v6l4 4-4 3.99V22h12zM8 7.5V4h8v3.5l-4 4-4-4z"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div
+      className="to-do-item_remove-btn"
+    >
+      <button
+        aria-label="Remove item button"
+        aria-labelledby={null}
+        className="MuiIconButton-root MuiIconButton-variantPlain MuiIconButton-colorWarning MuiIconButton-sizeSm css-punmis-JoyIconButton-root"
+        id="remove-item-button"
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseLeave={[Function]}
+        onMouseOver={[Function]}
+        onTouchEnd={[Function]}
+        onTouchStart={[Function]}
+      >
+        <svg
+          aria-hidden={true}
+          className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1ekxpud-MuiSvgIcon-root"
+          data-testid="DeleteIcon"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"
+          />
+        </svg>
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Item renders older item 1`] = `
+<div
+  className="MuiCard-root MuiCard-vertical MuiCard-variantOutlined MuiCard-colorWarning MuiCard-sizeSm drop-shadow css-1l37zdt-JoyCard-root"
+>
+  <div
+    className="to-do-item"
+    data-first-child=""
+    data-last-child=""
+  >
+    <div
+      className="to-do-item_toggle"
+    >
+      <button
+        aria-label="Complete item button"
+        className="MuiIconButton-root MuiIconButton-variantOutlined MuiIconButton-colorWarning MuiIconButton-sizeSm css-pxh0lg-JoyIconButton-root"
+        id="complete-item-button"
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseLeave={[Function]}
+      >
+        <svg
+          aria-hidden={true}
+          className="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+          data-testid="DoneIcon"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"
+          />
+        </svg>
+      </button>
+    </div>
+    <div
+      className="to-do-item_text"
+    >
+      <span>
+        To-do foo
+      </span>
+      <div
+        className="item-created-date"
+      >
+        <p
+          className="MuiTypography-root MuiTypography-body3 MuiTypography-colorNeutral MuiTypography-variantPlain css-gfqtt1-JoyTypography-root"
+        >
+          Created Jun 15, 2023 12:00 AM
+        </p>
+        <div
+          className=""
+        >
+          <svg
+            aria-hidden={true}
+            className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-17e890r-MuiSvgIcon-root"
+            data-testid="HourglassBottomIcon"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="m18 22-.01-6L14 12l3.99-4.01L18 2H6v6l4 4-4 3.99V22h12zM8 7.5V4h8v3.5l-4 4-4-4z"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div
+      className="to-do-item_remove-btn"
+    >
+      <button
+        aria-label="Remove item button"
+        aria-labelledby={null}
+        className="MuiIconButton-root MuiIconButton-variantPlain MuiIconButton-colorWarning MuiIconButton-sizeSm css-punmis-JoyIconButton-root"
+        id="remove-item-button"
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseLeave={[Function]}
+        onMouseOver={[Function]}
+        onTouchEnd={[Function]}
+        onTouchStart={[Function]}
+      >
+        <svg
+          aria-hidden={true}
+          className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1ekxpud-MuiSvgIcon-root"
+          data-testid="DeleteIcon"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"
+          />
+        </svg>
+      </button>
+    </div>
+  </div>
+</div>
+`;

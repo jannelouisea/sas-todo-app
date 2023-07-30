@@ -1,7 +1,101 @@
-import { render } from '@testing-library/react';
+import renderer from 'react-test-renderer';
+import { render, screen, fireEvent } from '@testing-library/react';
 import Item from './Item';
+import {
+    IToDoItem
+} from 'src/interfaces/';
+import { Provider } from 'react-redux';
+import {
+    IStoreType,
+    createStore
+} from 'src/app/store';
+import moment from 'moment';
+import { isOlderItemUtil } from 'src/utils';
 
-test('renders component', () => {
-    //render(<Item />);
-    expect(true).toBeTruthy();
+describe('Item', () => {
+    let store: IStoreType;
+
+    beforeEach(() => {
+        store = createStore();
+    });
+
+    afterEach(() => {
+        jest.clearAllMocks();
+    });
+
+    it('renders correctly', () => {
+        const item: IToDoItem = {
+            id: 'foo-id',
+            text: 'To-do foo',
+            createdAt: moment('2023-07-15').toDate(),
+            completed: false
+        };
+
+        const tree = renderer
+            .create(
+                <Provider store={store}>
+                    <Item item={item} />
+                </Provider>
+            )
+            .toJSON();
+        expect(tree).toMatchSnapshot();
+    });
+
+    it('renders completed item', () => {
+        const item: IToDoItem = {
+            id: 'foo-id',
+            text: 'To-do foo',
+            createdAt: moment('2023-07-15').toDate(),
+            completed: true
+        };
+
+        const tree = renderer
+            .create(
+                <Provider store={store}>
+                    <Item item={item} />
+                </Provider>
+            )
+            .toJSON();
+        expect(tree).toMatchSnapshot();
+    });
+
+    it('renders older item', () => {
+        const item: IToDoItem = {
+            id: 'foo-id',
+            text: 'To-do foo',
+            createdAt: moment('2023-06-15').toDate(),
+            completed: false
+        };
+
+        const tree = renderer
+            .create(
+                <Provider store={store}>
+                    <Item item={item} />
+                </Provider>
+            )
+            .toJSON();
+        expect(tree).toMatchSnapshot();
+    });
+
+    it('renders newer item', () => {
+        const mockUtils = { isOlderItemUtil };
+        const todoItemsSortedSpy = jest.spyOn(mockUtils, 'isOlderItemUtil');
+        todoItemsSortedSpy.mockReturnValue(false);
+
+        const item: IToDoItem = {
+            id: 'foo-id',
+            text: 'To-do foo',
+            createdAt: moment('2023-06-15').toDate(),
+            completed: false
+        };
+
+        const tree = renderer
+            .create(
+                <Provider store={store}>
+                    <Item item={item} />
+                </Provider>
+            )
+            .toJSON();
+        expect(tree).toMatchSnapshot();
+    });
 });

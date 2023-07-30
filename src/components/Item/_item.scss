@@ -1,0 +1,23 @@
+.to-do-item {
+    display: flex;
+    align-items: center;
+
+    &_toggle {
+        margin-left: .25rem;
+        margin-right: 1rem;
+    }
+
+    &_text {
+        flex: 1 1 0%;
+    }
+
+    &_remove-btn {
+        margin-right: .25rem;
+        margin-left: 1rem;
+        visibility: hidden;
+    }
+}
+
+.to-do-item:hover .to-do-item_remove-btn {
+    visibility: visible;
+}
