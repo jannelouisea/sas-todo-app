@@ -1,7 +1,7 @@
 import Card from '@mui/joy/Card';
 import PropTypes from 'prop-types';
 
-import { isOlderItem as isOlderItemUtil } from 'src/utils';
+import { isOlderItemUtil } from 'src/utils';
 import {
     IToDoItem
 } from 'src/interfaces/'
@@ -21,10 +21,16 @@ type Props = {
 }
 
 function Item({ item }: Props) {
+    const OLDER_ITEM_BORDER = '#D4A72C';
     const isOlderItem: boolean = isOlderItemUtil(item) && !item.completed;
     const color: MUIColor = item.completed ? MUIColor.Success : isOlderItem ? MUIColor.Warning : MUIColor.Primary;
     const cardVariant: MUIVariant = item.completed ? MUIVariant.Soft : MUIVariant.Outlined;
     const buttonVariant: MUIVariant = item.completed ? MUIVariant.Solid : MUIVariant.Outlined;
+
+    const muiCardStyles = {
+        borderRadius: '2rem',
+        border: isOlderItem ? `1px solid ${OLDER_ITEM_BORDER}` : ''
+    };
 
     return (
         <Card
@@ -32,20 +38,17 @@ function Item({ item }: Props) {
             color={color}
             variant={cardVariant}
             size={MUISize.Small}
-            sx={{
-                borderRadius: '2rem',
-                border: isOlderItem ? `1px solid #D4A72C` : ''
-            }}
+            sx={muiCardStyles}
         >
-            <div className="flex items-center group">
-                <div className="ml-1 mr-4">
+            <div className="to-do-item">
+                <div className="to-do-item_toggle">
                     <ToggleItemButton itemId={item.id} color={color} variant={buttonVariant} />
                 </div>
-                <div className="flex-1">
+                <div className="to-do-item_text">
                     <span>{item.text}</span>
                     <ItemCreatedDate createdAt={item.createdAt} isCompleted={item.completed} isOlder={isOlderItem} />
                 </div>
-                <div className="ml-4 mr-2 invisible group-hover:visible">
+                <div className="to-do-item_remove-btn">
                     <RemoveItemButtton itemId={item.id} color={color} />
                 </div>
             </div>

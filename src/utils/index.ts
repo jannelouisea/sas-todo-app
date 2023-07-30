@@ -1,5 +1,5 @@
-import isOlderItem from './isOlderItem';
+import isOlderItemUtil from './isOlderItemUtil';
 
 export {
-    isOlderItem,
+    isOlderItemUtil,
 }

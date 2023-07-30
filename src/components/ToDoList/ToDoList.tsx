@@ -1,7 +1,7 @@
 import { useAppSelector } from 'src/app/hooks'
 import { IToDoItem } from 'src/interfaces'
 import { Item } from 'src/components'
-import { isOlderItem } from 'src/utils';
+import { isOlderItemUtil } from 'src/utils';
 
 function ToDoList() {
     const NO_ITEMS_MATCH_MSG = 'No to-do items found that meet the current search and filter criteria.';
@@ -14,7 +14,7 @@ function ToDoList() {
 
     const itemMeetsCriteria = (item: IToDoItem) => {
         const includesSearchTeam = todoItemsFilters.searchTerm === '' ? true : item.text.includes(todoItemsFilters.searchTerm);
-        const isOldItem = isOlderItem(item);
+        const isOldItem = isOlderItemUtil(item);
         return ((todoItemsFilters.showNewer && !item.completed && !isOldItem) ||
             (todoItemsFilters.showOlder && !item.completed && isOldItem) ||
             (todoItemsFilters.showCompleted && item.completed)) && includesSearchTeam;
