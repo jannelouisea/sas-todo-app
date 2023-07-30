@@ -41,6 +41,50 @@ const initialState: IToDoItem[] = [
     },
 ];
 
+const compareByCreatedDateDesc = (itemA: IToDoItem, itemB: IToDoItem): number => {
+    if (itemB.createdAt === itemA.createdAt) {
+        return itemA.text.localeCompare(itemB.text);
+    }
+    return itemB.createdAt - itemA.createdAt;
+}
+
+const compareByCreatedDateAsc = (itemA: IToDoItem, itemB: IToDoItem): number => {
+    if (itemB.createdAt === itemA.createdAt) {
+        return itemA.text.localeCompare(itemB.text);
+    }
+    return itemA.createdAt - itemB.createdAt;
+}
+
+const compareByTextAZ = (itemA: IToDoItem, itemB: IToDoItem): number => itemA.text.localeCompare(itemB.text);
+
+const compareByTextZA = (itemA: IToDoItem, itemB: IToDoItem): number => itemB.text.localeCompare(itemA.text);
+
+const compareByCompleted = (itemA: IToDoItem, itemB: IToDoItem): number => {
+    if (itemA.completed === itemB.completed) {
+        if (itemB.createdAt === itemA.createdAt) {
+            return itemA.text.localeCompare(itemB.text);
+        }
+        return itemB.createdAt - itemA.createdAt;
+    } else if (itemA.completed) {
+        return -1;
+    } else {
+        return 1;
+    }
+};
+
+const compareByIncomplete = (itemA: IToDoItem, itemB: IToDoItem): number => {
+    if (itemA.completed === itemB.completed) {
+        if (itemB.createdAt === itemA.createdAt) {
+            return itemA.text.localeCompare(itemB.text);
+        }
+        return itemB.createdAt - itemA.createdAt;
+    } else if (itemA.completed) {
+        return 1;
+    } else {
+        return -1;
+    }
+}
+
 const todoItemsSlice = createSlice({
     name: 'todoItems',
     initialState,
@@ -76,50 +120,18 @@ const todoItemsSlice = createSlice({
 
             switch (action.payload) {
                 case Sort.DateDesc:
-                    return newState.sort((itemA: IToDoItem, itemB: IToDoItem) => {
-                        if (itemB.createdAt === itemA.createdAt) {
-                            return itemA.text.localeCompare(itemB.text);
-                        }
-                        return itemB.createdAt - itemA.createdAt;
-                    });
+                    return newState.sort(compareByCreatedDateDesc);
                 case Sort.DateAsc:
-                    return newState.sort((itemA: IToDoItem, itemB: IToDoItem) => {
-                        if (itemB.createdAt === itemA.createdAt) {
-                            return itemA.text.localeCompare(itemB.text);
-                        }
-                        return itemA.createdAt - itemB.createdAt;
-                    });
+                    return newState.sort(compareByCreatedDateAsc);
                 case Sort.TextDesc:
-                    return newState.sort((itemA: IToDoItem, itemB: IToDoItem) => itemB.text.localeCompare(itemA.text));
+                    return newState.sort(compareByTextZA);
                 case Sort.TextAsc:
-                    return newState.sort((itemA: IToDoItem, itemB: IToDoItem) => itemA.text.localeCompare(itemB.text));
+                    return newState.sort(compareByTextAZ);
                 case Sort.Cmpl1st:
-                    return newState.sort((itemA: IToDoItem, itemB: IToDoItem) => {
-                        if (itemA.completed === itemB.completed) {
-                            if (itemB.createdAt === itemA.createdAt) {
-                                return itemA.text.localeCompare(itemB.text);
-                            }
-                            return itemB.createdAt - itemA.createdAt;
-                        } else if (itemA.completed) {
-                            return -1;
-                        } else {
-                            return 1;
-                        }
-                    });
+                    return newState.sort(compareByCompleted);
                 case Sort.Incmpl1st:
                 default:
-                    return newState.sort((itemA: IToDoItem, itemB: IToDoItem) => {
-                        if (itemA.completed === itemB.completed) {
-                            if (itemB.createdAt === itemA.createdAt) {
-                                return itemA.text.localeCompare(itemB.text);
-                            }
-                            return itemB.createdAt - itemA.createdAt;
-                        } else if (itemA.completed) {
-                            return 1;
-                        } else {
-                            return -1;
-                        }
-                    });
+                    return newState.sort(compareByIncomplete);
             }
         }
     }
