@@ -54,5 +54,5 @@ describe('ToggleItemButton', () => {
         expect(todoItemToggledSpy).toHaveBeenCalledTimes(1);
         expect(todoItemToggledSpy).toHaveBeenCalledWith(itemId);
         expect(todoItemsSortedSpy).toHaveBeenCalledTimes(1);
-    })
+    });
 });

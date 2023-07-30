@@ -79,8 +79,8 @@ describe('Item', () => {
 
     it('renders newer item', () => {
         const mockUtils = { isOlderItemUtil };
-        const todoItemsSortedSpy = jest.spyOn(mockUtils, 'isOlderItemUtil');
-        todoItemsSortedSpy.mockReturnValue(false);
+        const isOlderItemUtilSpy = jest.spyOn(mockUtils, 'isOlderItemUtil');
+        isOlderItemUtilSpy.mockReturnValue(false);
 
         const item: IToDoItem = {
             id: 'foo-id',
