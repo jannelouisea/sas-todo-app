@@ -1,0 +1,15 @@
+.to-do-list {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    overflow-y: auto;
+
+    &_item {
+        margin-bottom: 1rem;
+    }
+
+    &_msg {
+        text-align: center;
+        margin-top: 1rem;
+    }
+}
