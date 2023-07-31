@@ -38,6 +38,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "coverage": "react-scripts test --coverage --watchAll",
+    "coverage:workflow": "react-scripts test --coverage --watchAll=false",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
