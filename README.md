@@ -1,4 +1,4 @@
-# DOOTDOOT
+# DOOTDOOT [![codecov](https://codecov.io/gh/jannelouisea/sas-todo-app/branch/main/graph/badge.svg?token=RAOFSNYY4C)](https://codecov.io/gh/jannelouisea/sas-todo-app)
 
 ### About
 DootDoot is a basic React application that keeps track of everyday things you need to do.
